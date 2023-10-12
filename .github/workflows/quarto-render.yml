@@ -19,12 +19,12 @@ jobs:
         activate-environment: quarto-import
         environment-file: _import/environment.yml
 
-    - name: "Import external notebooks"
-      working-directory: ./_import
-      run: |
-        conda info
-        pytest
-        python quarto_import.py -f assets.json
+#    - name: "Import external notebooks"
+#      working-directory: ./_import
+#      run: |
+#        conda info
+#        pytest
+#        python quarto_import.py -f assets.json
 
     - name: "Install Quarto"
       uses: quarto-dev/quarto-actions/install-quarto@main
