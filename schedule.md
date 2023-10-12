@@ -34,19 +34,7 @@ title: Schedule
 - Agenda for tomorrow: what's coming next.
 
 
-### Day 2 - April 13, 2022
-
-| Time, PST [(UTC-7)](https://www.timeanddate.com/time/zones/pdt) | Event | Leads/Instructors |
-|------|-------|-------------------|
-| 2:00 pm | Welcome Back / Earthdata Authentication: [Set up netrc file](how-tos/authentication/NASA_Earthdata_Authentication.ipynb) & [Generate EDL Tokens](how-tos/authentication/NASA_Earthdata_Login_Token.ipynb) | Aaron Friesz (LP DAAC) | 
-| 2:10 pm | [Earthdata Cloud: Search and Discovery - CMR API](tutorials/Data_Discovery_CMR_API_EDL_Token.ipynb) | Aaron Friesz (LP DAAC) | 
-| 2:45 pm | Break/QA | |
-| 2:50 pm | [Earthdata Cloud: Search and Discovery - Data Access](how-tos/data_access/Earthdata_Cloud__Single_File__Direct_S3_Access_Clip_COG_Example.ipynb) | Aaron Friesz (LP DAAC) | 
-| 3:30 pm | Break | | 
-| 4:00 pm | [Comparing TNC Tree Data to ECOSTRESS Use Case](tutorials/Comparing_TNC_Tree_Data_to_ECOSTRESS.ipynb) | Gregory Halverson (JPL) |
-| 5:00 pm | Break/QA |  |
-
-#### Closing Day 2
+#### Closing
 
 - **Thank you!**
 - You will continue to have access to the 2i2c JupyterHub in AWS for two weeks following the ECOSTRESS Cloud Workshop. You may use that time to continue work and all learn more about migrating data accass routines and science workflows to the Cloud. This cloud compute environment is supported by the [NASA Openscapes](https://nasa-openscapes.github.io/) project. 
