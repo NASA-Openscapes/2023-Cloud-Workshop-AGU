@@ -17,7 +17,7 @@ jobs:
         channels: conda-forge
         mamba-version: "*"
         activate-environment: quarto-import
-        environment-file: _import/environment.yml
+#        environment-file: _import/environment.yml
 
 #    - name: "Import external notebooks"
 #      working-directory: ./_import
