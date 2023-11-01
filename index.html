@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="This Workshop is hosted by NASA LP DAAC and JPL with support from NASA Openscapes.">
+<meta name="author" content="NASA Openscapes Mentors">
 
-<title>2022 ECOSTRESS Cloud Workshop - Enabling Analysis in the Cloud Using NASA Earth Science Data</title>
+<title>2023 NASA Openscapes AGU Workshop - Enabling Analysis in the Cloud Using NASA Earth Science Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cloud-paradigm.html" rel="next">
+<link href="./prerequisites.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">2022 ECOSTRESS Cloud Workshop</span>
+    <span class="navbar-title">2023 NASA Openscapes AGU Workshop</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -95,23 +95,27 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Welcome</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./cloud-paradigm.html" rel="" target="">
- <span class="dropdown-text">Cloud Paradigm</span></a>
+    <a class="dropdown-item" href="./prerequisites.html" rel="" target="">
+ <span class="dropdown-text">Prerequisites</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./schedule.html" rel="" target="">
  <span class="dropdown-text">Schedule</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./prerequisites.html" rel="" target="">
- <span class="dropdown-text">Prerequisites</span></a>
+    <a class="dropdown-item" href="./slides.html" rel="" target="">
+ <span class="dropdown-text">Slides</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Tutorials</li>
+        <li>
+    <a class="dropdown-item" href="./tutorials/Earthdata_Search_Discovery_earthaccess.html" rel="" target="">
+ <span class="dropdown-text">Search &amp; Discovery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -139,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/ecostress_lpdaac_image.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./nasa-openscapes.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -152,8 +156,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cloud-paradigm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cloud Paradigm</span></a>
+  <a href="./prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prerequisites</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,8 +168,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prerequisites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prerequisites</span></a>
+  <a href="./slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -178,7 +182,16 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">tutorials/index.md</span>
+ <span class="menu-text">Cloud Set Up</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorials/Earthdata_Search_Discovery_earthaccess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Search &amp; Discovery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">Access, Subset &amp; Plot</span>
   </li>
       </ul>
   </li>
@@ -201,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop/edit/main/index.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU/edit/main/index.md" class="toc-action">Edit this page</a></p><p><a href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -219,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>This Workshop is hosted by NASA LP DAAC and JPL with support from NASA Openscapes. </p>
+             <p>NASA Openscapes Mentors </p>
           </div>
   </div>
     
@@ -232,9 +245,8 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome</h2>
-<p><img src="img/ecostress_banner.jpg" class="img-fluid"></p>
-<p>Welcome to the <strong>2022 ECOSTRESS Cloud Workshop</strong> hosted by NASA’s Land Processes Distributed Activate Archive (<a href="https://lpdaac.usgs.gov/">LP DAAC</a>) with support from <a href="https://nasa-openscapes.github.io/">NASA Openscapes</a>.</p>
-<p><strong>The workshop will take place virtually daily on April 12 and 13, 2022 from 2pm-5:30pm PST <a href="https://www.timeanddate.com/time/zones/pdt">(UTC-7)</a></strong>.</p>
+<p>Welcome to the <strong>2023 NASA Openscapes AGU Workshop</strong> hosted by <a href="https://nasa-openscapes.github.io/">NASA Openscapes</a>!</p>
+<p><strong>The workshop will take place in person and virtually at AGU on Sunday, December 10, 2023 from 1pm-4:30pm PST <a href="https://www.timeanddate.com/time/zones/pdt">(UTC-7)</a></strong>.</p>
 </section>
 <section id="about" class="level2">
 <h2 class="anchored" data-anchor-id="about">About</h2>
@@ -258,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>TODO</p>
+<p>This Workshop has been developed as a cross-DAAC collaboration by the NASA-Openscapes Team. Learn more at <a href="nasa-openscapes.github.io">nasa-openscapes.github.io</a>.</p>
 
 
 </section>
@@ -616,8 +628,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cloud-paradigm.html" class="pagination-link">
-        <span class="nav-page-text">Cloud Paradigm</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./prerequisites.html" class="pagination-link">
+        <span class="nav-page-text">Prerequisites</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -627,7 +639,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">LPDAAC &amp; JPL (2022). 2022 ECOSTRESS Cloud Workshop</div>
+    <div class="nav-footer-center">Openscapes (2023). 2023 NASA Openscapes AGU Workshop</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

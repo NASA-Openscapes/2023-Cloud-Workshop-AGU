@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2022 ECOSTRESS Cloud Workshop - NASA Earthdata Cloud Clinic</title>
+<title>2023 NASA Openscapes AGU Workshop - NASA Earthdata Cloud Clinic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../slides.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -111,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">2022 ECOSTRESS Cloud Workshop</span>
+    <span class="navbar-title">2023 NASA Openscapes AGU Workshop</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -130,23 +131,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Welcome</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../cloud-paradigm.html" rel="" target="">
- <span class="dropdown-text">Cloud Paradigm</span></a>
+    <a class="dropdown-item" href="../prerequisites.html" rel="" target="">
+ <span class="dropdown-text">Prerequisites</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../schedule.html" rel="" target="">
  <span class="dropdown-text">Schedule</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../prerequisites.html" rel="" target="">
- <span class="dropdown-text">Prerequisites</span></a>
+    <a class="dropdown-item" href="../slides.html" rel="" target="">
+ <span class="dropdown-text">Slides</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Tutorials</li>
+        <li>
+    <a class="dropdown-item" href="../tutorials/Earthdata_Search_Discovery_earthaccess.html" rel="" target="">
+ <span class="dropdown-text">Search &amp; Discovery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -162,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">NASA Earthdata Cloud Clinic</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tutorials</li><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html">Search &amp; Discovery</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -174,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/ecostress_lpdaac_image.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../nasa-openscapes.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -187,8 +192,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../cloud-paradigm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cloud Paradigm</span></a>
+  <a href="../prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prerequisites</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -199,21 +204,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../prerequisites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prerequisites</span></a>
+  <a href="../slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Tutorials</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">tutorials/index.md</span>
+ <span class="menu-text">Cloud Set Up</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Search &amp; Discovery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">Access, Subset &amp; Plot</span>
   </li>
       </ul>
   </li>
@@ -258,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#support" id="toc-support" class="nav-link" data-scroll-target="#support">Support</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop/blob/main/tutorials/Earthdata_Search_Discovery_earthaccess.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/NASA-Openscapes/2023-Cloud-Workshop-AGU/blob/main/tutorials/Earthdata_Search_Discovery_earthaccess.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1254,7 +1268,7 @@ Using .netrc file for EDL</code></pre>
 <h3 class="anchored" data-anchor-id="create-a-subset-request">Create a subset request</h3>
 <p>Here we’ll create a request for a spatial subset of data.</p>
 <p>First, we need to create a Harmony Client, which is what we will interact with to submit and inspect a data request to Harmony, as well as to retrieve results.</p>
-<p>When creating the Client, we need to provide Earthdata Login credentials. This basic line below assumes that we have a <code>.netrc</code> available. See the Earthdata Cloud Cookbook <a href="&quot;https://nasa-openscapes.github.io/earthdata-cloud-cookbook/appendix/authentication.html&quot;">appendix</a> for more information on <a href="&quot;https://urs.earthdata.nasa.gov/&quot;">Earthdata Login</a> and netrc setup.</p>
+<p>When creating the Client, we need to provide Earthdata Login credentials. This basic line below assumes that we have a <code>.netrc</code> available. See the Earthdata Cloud Cookbook <a href="https://nasa-openscapes.github.io/earthdata-cloud-cookbook/appendix/authentication.html">appendix</a> for more information on <a href="https://urs.earthdata.nasa.gov/">Earthdata Login</a> and netrc setup.</p>
 <div class="cell" data-tags="[]">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>harmony_client <span class="op">=</span> Client()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1721,13 +1735,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../slides.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Slides</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">LPDAAC &amp; JPL (2022). 2022 ECOSTRESS Cloud Workshop</div>
+    <div class="nav-footer-center">Openscapes (2023). 2023 NASA Openscapes AGU Workshop</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
