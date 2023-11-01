@@ -2,39 +2,44 @@ project:
   type: website
 
 website:
-  title: "2022 ECOSTRESS Cloud Workshop"
-  site-url: https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/
-  repo-url: https://github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop
+  title: "2023 NASA Openscapes AGU Workshop"
+  site-url: https://nasa-openscapes.github.io/2023-Cloud-Workshop-AGU/
+  repo-url: https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU/
   repo-actions: [edit, issue]
   page-navigation: true
-  page-footer: "LPDAAC & JPL (2022). 2022 ECOSTRESS Cloud Workshop"
+  page-footer: "Openscapes (2023). 2023 NASA Openscapes AGU Workshop"
  
   navbar: 
     background: primary
     right: 
       - sidebar:welcome
       - icon: github
-        href: https://github.com/NASA-Openscapes/2022-ECOSTRESS-Cloud-Workshop
+        href: https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU
  
   sidebar:
     - id: welcome
       title: "Menu"
-      logo: img/ecostress_lpdaac_image.jpg
+      logo: nasa-openscapes.png
       style: "docked"
       collapse-level: 1
       align: left
       contents:
         - text: "Welcome"
           href: index.md
-        - text: "Cloud Paradigm"
-          href: cloud-paradigm.md
-        - text: "Schedule"
-          href: schedule.md
         - text: "Prerequisites"
           href: prerequisites.md 
+        - text: "Schedule"
+          href: schedule.md
+        - text: "Slides"
+          href: slides.md
         - section: "Tutorials"
           contents: 
-            - tutorials/index.md
+            - text: "Cloud Set Up"
+              href: 
+            - text: "Search & Discovery"
+              href: tutorials/Earthdata_Search_Discovery_earthaccess.ipynb
+            - text: "Access, Subset & Plot"
+              href: 
  #       - section: "Additional Resources"
   #        contents:
             
@@ -42,8 +47,8 @@ website:
 format:
   html:
     theme:
-      light: cosmo
-      dark: [cosmo, theme-dark.scss]
+      light: sandstone
+      dark: [sandstone, theme-dark.scss]
     code-background: true
     code-copy: true
     css: styles.css

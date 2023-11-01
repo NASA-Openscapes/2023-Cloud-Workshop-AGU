@@ -2,17 +2,14 @@
 title: "Enabling Analysis in the Cloud Using NASA Earth Science Data"
 subtitle: "A Hybrid workshop, remotely and online at AGU Fall 2023 Meeting"
  
-author: "This Workshop is hosted by NASA LP DAAC and JPL with support from NASA Openscapes."
+author: "NASA Openscapes Mentors"
 ---
 
 ## Welcome
 
-![](img/ecostress_banner.jpg)
+Welcome to the **2023 NASA Openscapes AGU Workshop** hosted by [NASA Openscapes](https://nasa-openscapes.github.io/)!
 
-Welcome to the **2022 ECOSTRESS Cloud Workshop** hosted by NASA’s Land Processes Distributed Activate Archive ([LP DAAC]( https://lpdaac.usgs.gov/)) with support from [NASA Openscapes](https://nasa-openscapes.github.io/).
-
-**The workshop will take place virtually daily on April 12 and 13, 2022 from 2pm-5:30pm PST [(UTC-7)](https://www.timeanddate.com/time/zones/pdt)**.
-
+**The workshop will take place in person and virtually at AGU on Sunday, December 10, 2023 from 1pm-4:30pm PST [(UTC-7)](https://www.timeanddate.com/time/zones/pdt)**.
 
 
 ## About
@@ -23,7 +20,6 @@ Welcome to the **2022 ECOSTRESS Cloud Workshop** hosted by NASA’s Land Process
 - Provide strategies and best practices for finding and accessing NASA Earthdata Cloud data to help promote interdisciplinary research. Specifically, participants will learn how to access data from AWS S3 buckets and have a better understanding of the Python ecosystem used to analyze the data depending on size and data formats; 
 - Better understand the needs of Earthdata data scientists by providing a pre/post survey and engaging in discussions with workshop participants; 
 - Identify and practice using popular open source tools and utilities.
-
 
 
 ### Workshop Description
@@ -38,4 +34,4 @@ Upon completion of the proposed workshop, participants will leave with a better 
 
 ## Acknowledgements
 
-TODO
+This Workshop has been developed as a cross-DAAC collaboration by the NASA-Openscapes Team. Learn more at [nasa-openscapes.github.io](nasa-openscapes.github.io).

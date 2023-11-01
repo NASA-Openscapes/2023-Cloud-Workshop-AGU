@@ -4,3 +4,9 @@
 .Ruserdata
 
 /.quarto/
+.ipynb_checkpoints
+*_cache/
+_site/
+/_site/
+
+.DS_Store
