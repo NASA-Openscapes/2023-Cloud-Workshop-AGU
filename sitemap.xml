@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/schedule.html</loc>
-    <lastmod>2023-10-12T21:18:38.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/prerequisites.html</loc>
-    <lastmod>2023-10-12T21:18:37.361Z</lastmod>
-  </url>
-  <url>
     <loc>https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/cloud-paradigm.html</loc>
-    <lastmod>2023-10-12T21:18:34.937Z</lastmod>
+    <lastmod>2023-11-01T18:23:10.556Z</lastmod>
   </url>
   <url>
     <loc>https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/index.html</loc>
-    <lastmod>2023-10-12T21:18:37.917Z</lastmod>
+    <lastmod>2023-11-01T18:23:09.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/schedule.html</loc>
+    <lastmod>2023-11-01T18:23:06.380Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/tutorials/Earthdata_Search_Discovery_earthaccess.html</loc>
+    <lastmod>2023-11-01T18:23:09.252Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa-openscapes.github.io/2022-ECOSTRESS-Cloud-Workshop/prerequisites.html</loc>
+    <lastmod>2023-11-01T18:23:10.124Z</lastmod>
   </url>
 </urlset>
