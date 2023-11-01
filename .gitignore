@@ -4,3 +4,6 @@
 .Ruserdata
 
 /.quarto/
+.ipynb_checkpoints
+*_cache/
+_site/
