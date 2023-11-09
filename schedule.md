@@ -6,7 +6,7 @@ title: Schedule
 
 **Zoom links** will be shared directly with this group via a (calendar) meeting invite.
 
-**Note,** hands-on exercises will be executed from a **Jupyter Lab instance in 2i2c** [Click here to spin up the instance and simultaneously clone this GitHub repository to follow along with the tutorials](https://openscapes.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-Openscapes%2F2023-Cloud-Workshop-AGU&urlpath=lab%2Ftree%2F2023-Cloud-Workshop-AGU%2FREADME.md&branch=main). Please pass along your GitHub Username to get access.
+**Note,** hands-on exercises will be executed from a **Jupyter Lab instance in 2i2c** [Click here to deploy the instance](https://openscapes.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-Openscapes%2F2023-Cloud-Workshop-AGU&urlpath=lab%2Ftree%2F2023-Cloud-Workshop-AGU%2FREADME.md&branch=main) and simultaneously clone this GitHub repository to follow along with the tutorials. Please pass along your GitHub Username to get access.
  
 ## Workshop Schedule 
 
