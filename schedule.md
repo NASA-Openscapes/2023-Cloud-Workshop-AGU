@@ -6,7 +6,7 @@ title: Schedule
 
 **Zoom links** will be shared directly with this group via a (calendar) meeting invite.
 
-**Note,** hands-on exercises will be executed from a [Jupyter Lab instance in 2i2c](https://openscapes.2i2c.cloud/hub/home/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-Openscapes%2F2023-Cloud-Workshop-AGU&urlpath=lab%2Ftree%2F2023-Cloud-Workshop-AGU%2F&branch=master). Please pass along your Github Username to get access.
+**Note,** hands-on exercises will be executed from a **Jupyter Lab instance in 2i2c** [Click here to spin up the instance and simultaneously clone this GitHub repository to follow along with the tutorials](https://openscapes.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-Openscapes%2F2023-Cloud-Workshop-AGU&urlpath=lab%2Ftree%2F2023-Cloud-Workshop-AGU%2FREADME.md&branch=main). Please pass along your GitHub Username to get access.
  
 ## Workshop Schedule 
 
@@ -21,12 +21,7 @@ title: Schedule
 | 2:30 pm | Break | |
 | 2:45 pm | Tutorial: In-cloud Science Workflow: Access, Subset & Plot | Danny Kaufman (ASDC DAAC) |
 | 3:45 pm | Q & A | All NASA Openscapes Mentors |
-| 4:15 pm | Closing Survey | |
-
-
-### Getting help during the Workshop
-
-TODO
+| 4:15 pm | Closing Survey | Cassie Nickles (PO.DAAC) |
 
 
 ## Closing - Close out your Jupyter Hub!
