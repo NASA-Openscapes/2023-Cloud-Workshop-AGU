@@ -27,7 +27,7 @@ title: Schedule
 ## Closing - Close out your Jupyter Hub!
 
 - Close out your JupyterHub instance if you are finished for the day, following [these instructions](https://podaac.github.io/2022-SWOT-Ocean-Cloud-Workshop/tutorials/00_Setup.html#how-do-i-end-my-session). 
-- You will continue to have access to the 2i2c JupyterHub in AWS for two weeks following this Workshop. You may use that time to continue work and all learn more about migrating data access routines and science workflows to the Cloud. This cloud compute environment is supported by the [NASA Openscapes](https://nasa-openscapes.github.io/) project. 
+- You will continue to have access to the 2i2c JupyterHub in AWS for two weeks following this Workshop. You may use that time on your own to continue work and learn more about migrating data access routines and science workflows to the cloud. This cloud compute environment is supported by the [NASA Openscapes](https://nasa-openscapes.github.io/) project. 
 
 ### **Thank you!**
 
