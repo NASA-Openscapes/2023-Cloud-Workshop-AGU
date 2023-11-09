@@ -102,14 +102,14 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "The Enabling Analysis in the Cloud Using NASA Earth Science Data will take place on Sunday, December 10 from 13:00-16:30.\nZoom links will be shared directly with this group via a (calendar) meeting invite.\nNote, hands-on exercises will be executed from a Jupyter Lab instance in 2i2c. Please pass along your Github Username to get access."
+    "text": "The Enabling Analysis in the Cloud Using NASA Earth Science Data will take place on Sunday, December 10 from 13:00-16:30.\nZoom links will be shared directly with this group via a (calendar) meeting invite.\nNote, hands-on exercises will be executed from a Jupyter Lab instance in 2i2c Click here to spin up the instance and simultaneously clone this GitHub repository to follow along with the tutorials. Please pass along your GitHub Username to get access."
   },
   {
     "objectID": "schedule.html#workshop-schedule",
     "href": "schedule.html#workshop-schedule",
     "title": "Schedule",
     "section": "Workshop Schedule",
-    "text": "Workshop Schedule\n\nDecember 10, 2023\n\n\n\nTime, PST (UTC-7)\nEvent\nLeads/Instructors\n\n\n\n\n1:00 pm\nWelcome / Open Science Mindset\nCassie Nickles (PO.DAAC)\n\n\n1:20 pm\nIntroduction to NASA Earthdata Cloud\nMichele Thornton (ORNL DAAC)\n\n\n1:40 pm\nOrientation and setup in JupyterHub in the Cloud\nMichele Thornton (ORNL DAAC)\n\n\n2:00 pm\nTutorial: In-cloud Science Workflow: Search & Discovery\nAaron Friesz (LP DAAC)\n\n\n2:30 pm\nBreak\n\n\n\n2:45 pm\nTutorial: In-cloud Science Workflow: Access, Subset & Plot\nDanny Kaufman (ASDC DAAC)\n\n\n3:45 pm\nQ & A\nAll NASA Openscapes Mentors\n\n\n4:15 pm\nClosing Survey\n\n\n\n\n\n\nGetting help during the Workshop\nTODO"
+    "text": "Workshop Schedule\n\nDecember 10, 2023\n\n\n\nTime, PST (UTC-7)\nEvent\nLeads/Instructors\n\n\n\n\n1:00 pm\nWelcome / Open Science Mindset\nCassie Nickles (PO.DAAC)\n\n\n1:20 pm\nIntroduction to NASA Earthdata Cloud\nMichele Thornton (ORNL DAAC)\n\n\n1:40 pm\nOrientation and setup in JupyterHub in the Cloud\nMichele Thornton (ORNL DAAC)\n\n\n2:00 pm\nTutorial: In-cloud Science Workflow: Search & Discovery\nAaron Friesz (LP DAAC)\n\n\n2:30 pm\nBreak\n\n\n\n2:45 pm\nTutorial: In-cloud Science Workflow: Access, Subset & Plot\nDanny Kaufman (ASDC DAAC)\n\n\n3:45 pm\nQ & A\nAll NASA Openscapes Mentors\n\n\n4:15 pm\nClosing Survey\nCassie Nickles (PO.DAAC)"
   },
   {
     "objectID": "schedule.html#closing---close-out-your-jupyter-hub",
