@@ -102,7 +102,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "The Enabling Analysis in the Cloud Using NASA Earth Science Data will take place on Sunday, December 10 from 13:00-16:30.\nZoom links will be shared directly with this group via a (calendar) meeting invite.\nNote, hands-on exercises will be executed from a Jupyter Lab instance in 2i2c Click here to deploy the instance and simultaneously clone this GitHub repository to follow along with the tutorials. Please pass along your GitHub Username to get access."
+    "text": "The Enabling Analysis in the Cloud Using NASA Earth Science Data will take place on Sunday, December 10 from 13:00-16:30.\nZoom links will be shared directly with this group via a (calendar) meeting invite.\nNote, hands-on exercises will be executed from a Jupyter Lab instance in 2i2c. Click here to deploy the instance and simultaneously clone this GitHub repository to follow along with the tutorials. Please pass along your GitHub Username to get access."
   },
   {
     "objectID": "schedule.html#workshop-schedule",
