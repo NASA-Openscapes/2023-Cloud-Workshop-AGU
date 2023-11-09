@@ -116,6 +116,6 @@
     "href": "schedule.html#closing---close-out-your-jupyter-hub",
     "title": "Schedule",
     "section": "Closing - Close out your Jupyter Hub!",
-    "text": "Closing - Close out your Jupyter Hub!\n\nClose out your JupyterHub instance if you are finished for the day, following these instructions.\nYou will continue to have access to the 2i2c JupyterHub in AWS for two weeks following this Workshop. You may use that time to continue work and all learn more about migrating data access routines and science workflows to the Cloud. This cloud compute environment is supported by the NASA Openscapes project.\n\n\nThank you!"
+    "text": "Closing - Close out your Jupyter Hub!\n\nClose out your JupyterHub instance if you are finished for the day, following these instructions.\nYou will continue to have access to the 2i2c JupyterHub in AWS for two weeks following this Workshop. You may use that time on your own to continue work and learn more about migrating data access routines and science workflows to the cloud. This cloud compute environment is supported by the NASA Openscapes project.\n\n\nThank you!"
   }
 ]
