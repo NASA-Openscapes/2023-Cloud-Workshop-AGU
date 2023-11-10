@@ -1,6 +1,6 @@
 ---
 title: "Enabling Analysis in the Cloud Using NASA Earth Science Data"
-subtitle: "A Hybrid workshop, remotely and online at AGU Fall 2023 Meeting"
+subtitle: "A Hybrid workshop, remotely and in person at AGU Fall 2023 Meeting"
  
 author: "NASA Openscapes Mentors"
 ---
