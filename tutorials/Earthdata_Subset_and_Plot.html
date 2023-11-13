@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 NASA Openscapes AGU Workshop - NASA Earthdata Cloud Clinic</title>
+<title>2023 NASA Openscapes AGU Workshop - Data subsetting and plotting with earthaccess, xarray, and harmony</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">NASA Earthdata Cloud Clinic</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data subsetting and plotting with earthaccess, xarray, and harmony</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NASA Earthdata Cloud Clinic</h1>
+<h1 class="title">Data subsetting and plotting with earthaccess, xarray, and harmony</h1>
 </div>
 
 
@@ -296,37 +296,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Welcome to the NASA Earthdata Cloud Clinic.</p>
-<p>We will go through <strong>two different direct cloud access &amp; subsetting options available in the Earthdata Cloud:</strong></p>
+<p>In these examples we will use the <code>xarray</code> library to subset data and then make figures using <code>geoviews</code>, <code>matplotlib</code>, and <code>cartopy</code>.</p>
+<p>We will go through <strong>three examples of subsetting and plotting data in the Earthdata Cloud:</strong></p>
 <ol type="1">
-<li><strong>The <a href="https://github.com/nsidc/earthaccess">earthaccess</a> python library</strong> for data search and direct cloud access, followed by <code>xarray</code> subsetting
+<li>Example 1 - Precipitation estimates from <a href="https://doi.org/10.5067/GPM/IMERGDF/DAY/07">IMERG, Daily Level 3 data</a></li>
+<li>Example 2 - Snow cover from <a href="https://doi.org/10.5067/MODIS/MOD10C1.061">MODIS/Terra, Daily Level 3 data</a></li>
+<li>Example 3 - Snow mass from <a href="https://doi.org/10.5067/EVKPQZ4AFC4D">SMAP, 3-hourly Level 4 data</a></li>
+<li>Appendix: <strong>The <a href="https://github.com/nasa/harmony-py">Harmony-py</a> python library</strong> for direct cloud access &amp; data subsetting
 <ul>
-<li>Working with <a href="https://podaac.jpl.nasa.gov/dataset/SEA_SURFACE_HEIGHT_ALT_GRIDS_L4_2SATS_5DAY_6THDEG_V_JPL2205">MEaSUREs Sea Surface Height Anomalies</a></li>
-<li>Discover data using <a href="https://search.earthdata.nasa.gov/search/granules?p=C2270392799-POCLOUD&amp;pg%5B0%5D%5Bv%5D=f&amp;pg%5B0%5D%5Bgsk%5D=-start_date&amp;q=measures%20ssh%20anomalies&amp;tl=1685392107!3!!">Earthdata Search</a></li>
-</ul></li>
-<li><strong>The <a href="https://github.com/nasa/harmony-py">Harmony-py</a> python library</strong> for direct cloud access &amp; data subsetting
-<ul>
-<li>Requesting a subset of data from the <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1">GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (v4.1)</a> dataset using a vector-based geospatial file.</li>
-<li>This dataset can also be viewed in <a href="https://search.earthdata.nasa.gov/search?q=GHRSST%20Level%204%20MUR%20v4.1&amp;ff=Available%20in%20Earthdata%20Cloud!Customizable">Earthdata Search</a>.</li>
+<li>Requesting a subset of data from the <a href="https://doi.org/10.5067/EPIC/DSCOVR/L2_COMPOSITE_01">DSCOVR EPIC Composite</a>. This dataset can also be viewed in <a href="https://cmr.earthdata.nasa.gov/search/concepts/C1576365803-LARC_ASDC.html">Earthdata Search</a>.</li>
+<li>Maybe (?) also <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1">GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (v4.1)</a> dataset using a vector-based geospatial file.</li>
 </ul></li>
 </ol>
-<p>In both scenarios, we will be accessing data directly from Amazon Web Services (AWS), specifically in the us-west-2 region, which is where all cloud-hosted NASA Earthdata reside. This shared compute environment (JupyterHub) is also running in the same location. We will then load the data into Python as an <code>xarray</code> <code>dataset</code>.</p>
-<p>See the bottom of the notebook for additional resources, including several tutorials that that served as a foundation for this clinic.</p>
+<p>In each example, we will be accessing data directly from Amazon Web Services (AWS), specifically in the us-west-2 region, which is where all cloud-hosted NASA Earthdata reside. This shared compute environment (JupyterHub) is also running in the same location. We will then load the data into Python as an <code>xarray</code> <code>dataset</code>.</p>
+<p>For Harmony-py, we will demonstrate an example of pulling data via the cloud from an existing on-premise data server.</p>
+<p>See the bottom of the notebook for additional resources, including several tutorials that that served as a foundation for this clinic. Includes: https://github.com/rupesh2/atmospheric_rivers/tree/main</p>
 <section id="a-note-on-subsetting" class="level3">
 <h3 class="anchored" data-anchor-id="a-note-on-subsetting">A note on subsetting</h3>
 <p>In addition to directly accessing the files archived and distributed by each of the NASA DAACs, many datasets also support services that allow us to customize the data via subsetting, reformatting, reprojection/regridding, and file aggregation. What does subsetting mean? Here’s a generalized graphic of what we mean.</p>
-<p><img src="images/subsetting_diagram.png" class="img-fluid" style="width:60.0%" alt="Three maps of the United States are present, with a red bounding box over the state of Colorado. Filtering and subsetting are demonstrated by overlaying SMAP L2 data, with data overlapping and cropping the rectangle, respectively."></p>
+<p><img src="https://github.com/NASA-Openscapes/earthdata-cloud-cookbook/blob/main/examples/images/subsetting_diagram.png" class="img-fluid" style="width:60.0%" alt="Three maps of the United States are present, with a red bounding box over the state of Colorado. Filtering and subsetting are demonstrated by overlaying SMAP L2 data, with data overlapping and cropping the rectangle, respectively."></p>
 <p>Note: “direct cloud access” is also called “direct S3 access” or simply “direct access”. And “subsetting” is also called “transformation”.</p>
 </section>
 </section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<ol start="3" type="1">
-<li>Extract variables and spatial slices from an <code>xarray</code> dataset</li>
+<ol type="1">
+<li>Extract variables, temporal slices, and spatial slices from an <code>xarray</code> dataset</li>
 <li>Plot data using <code>xarray</code></li>
-<li>Conceptualize data subsetting services provided by NASA Earthdata, including Harmony</li>
 <li>Plot a polygon geojson file with a basemap using <code>geoviews</code></li>
-<li>Utilize the <code>harmony-py</code> library to request data over the Gulf of Mexico</li>
+<li>Conceptualize data subsetting services provided by NASA Earthdata, including Harmony</li>
+<li>Utilize the <code>harmony-py</code> library to request data over the Bay of San Francisco</li>
 </ol>
 <section id="import-required-packages" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-packages">Import Required Packages</h3>
