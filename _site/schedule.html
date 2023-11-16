@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -84,9 +84,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Menu</span>
-    </a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-menu">    
         <li>
     <a class="dropdown-item" href="./index.html">
@@ -110,12 +108,16 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./tutorials/Earthdata_Search_Discovery_earthaccess.html">
  <span class="dropdown-text">Search &amp; Discovery</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./tutorials/Earthdata_Subset_and_Plot.html">
+ <span class="dropdown-text">Access, Subset &amp; Plot</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU"><i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+ </a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
@@ -139,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
+      <a href="./" class="sidebar-logo-link">
       <img src="./nasa-openscapes.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
@@ -174,16 +176,15 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
-  Cloud Set Up
-  </li>
-          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tutorials/Earthdata_Search_Discovery_earthaccess.html" class="sidebar-item-text sidebar-link">Search &amp; Discovery</a>
   </div>
 </li>
           <li class="sidebar-item">
-  Access, Subset &amp; Plot
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./tutorials/Earthdata_Subset_and_Plot.html" class="sidebar-item-text sidebar-link">Access, Subset &amp; Plot</a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -198,7 +199,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#workshop-schedule" id="toc-workshop-schedule" class="nav-link active" data-scroll-target="#workshop-schedule">Workshop Schedule</a>
   <ul class="collapse">
   <li><a href="#december-10-2023" id="toc-december-10-2023" class="nav-link" data-scroll-target="#december-10-2023">December 10, 2023</a></li>
-  <li><a href="#getting-help-during-the-workshop" id="toc-getting-help-during-the-workshop" class="nav-link" data-scroll-target="#getting-help-during-the-workshop">Getting help during the Workshop</a></li>
   </ul></li>
   <li><a href="#closing---close-out-your-jupyter-hub" id="toc-closing---close-out-your-jupyter-hub" class="nav-link" data-scroll-target="#closing---close-out-your-jupyter-hub">Closing - Close out your Jupyter Hub!</a>
   <ul class="collapse">
@@ -220,7 +220,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-  
     
   </div>
   
@@ -229,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 
 <p><strong>The Enabling Analysis in the Cloud Using NASA Earth Science Data will take place on Sunday, December 10 from 13:00-16:30</strong>.</p>
 <p><strong>Zoom links</strong> will be shared directly with this group via a (calendar) meeting invite.</p>
-<p><strong>Note,</strong> hands-on exercises will be executed from a <a href="https://openscapes.2i2c.cloud/hub/home/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-Openscapes%2F2023-Cloud-Workshop-AGU&amp;urlpath=lab%2Ftree%2F2023-Cloud-Workshop-AGU%2F&amp;branch=master">Jupyter Lab instance in 2i2c</a>. Please pass along your Github Username to get access.</p>
+<p><strong>Note,</strong> hands-on exercises will be executed from a <strong>Jupyter Lab instance in 2i2c.</strong> <a href="https://openscapes.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-Openscapes%2F2023-Cloud-Workshop-AGU&amp;urlpath=lab%2Ftree%2F2023-Cloud-Workshop-AGU%2FREADME.md&amp;branch=main">Click here to deploy the instance</a> and simultaneously clone this GitHub repository to follow along with the tutorials. Please pass along your GitHub Username to get access.</p>
 <section id="workshop-schedule" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-schedule">Workshop Schedule</h2>
 <section id="december-10-2023" class="level3">
@@ -281,21 +280,17 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>4:15 pm</td>
 <td>Closing Survey</td>
-<td></td>
+<td>Cassie Nickles (PO.DAAC)</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="getting-help-during-the-workshop" class="level3">
-<h3 class="anchored" data-anchor-id="getting-help-during-the-workshop">Getting help during the Workshop</h3>
-<p>TODO</p>
 </section>
 </section>
 <section id="closing---close-out-your-jupyter-hub" class="level2">
 <h2 class="anchored" data-anchor-id="closing---close-out-your-jupyter-hub">Closing - Close out your Jupyter Hub!</h2>
 <ul>
 <li>Close out your JupyterHub instance if you are finished for the day, following <a href="https://podaac.github.io/2022-SWOT-Ocean-Cloud-Workshop/tutorials/00_Setup.html#how-do-i-end-my-session">these instructions</a>.</li>
-<li>You will continue to have access to the 2i2c JupyterHub in AWS for two weeks following this Workshop. You may use that time to continue work and all learn more about migrating data access routines and science workflows to the Cloud. This cloud compute environment is supported by the <a href="https://nasa-openscapes.github.io/">NASA Openscapes</a> project.</li>
+<li>You will continue to have access to the 2i2c JupyterHub in AWS for two weeks following this Workshop. You may use that time on your own to continue work and learn more about migrating data access routines and science workflows to the cloud. This cloud compute environment is supported by the <a href="https://nasa-openscapes.github.io/">NASA Openscapes</a> project.</li>
 </ul>
 <section id="thank-you" class="level3">
 <h3 class="anchored" data-anchor-id="thank-you"><strong>Thank you!</strong></h3>
@@ -437,9 +432,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
+  } 
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -461,24 +454,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -514,42 +490,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>

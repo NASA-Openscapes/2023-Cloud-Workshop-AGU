@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nasa-openscapes.github.io/2023-Cloud-Workshop-AGU/slides.html</loc>
-    <lastmod>2023-11-06T18:35:36.905Z</lastmod>
+    <lastmod>2023-11-16T19:16:20.957Z</lastmod>
   </url>
   <url>
     <loc>https://nasa-openscapes.github.io/2023-Cloud-Workshop-AGU/schedule.html</loc>
-    <lastmod>2023-11-06T18:35:37.235Z</lastmod>
+    <lastmod>2023-11-16T19:24:27.955Z</lastmod>
   </url>
   <url>
     <loc>https://nasa-openscapes.github.io/2023-Cloud-Workshop-AGU/prerequisites.html</loc>
-    <lastmod>2023-11-06T18:35:37.540Z</lastmod>
+    <lastmod>2023-11-16T19:24:25.134Z</lastmod>
   </url>
   <url>
     <loc>https://nasa-openscapes.github.io/2023-Cloud-Workshop-AGU/index.html</loc>
-    <lastmod>2023-11-06T18:35:37.909Z</lastmod>
+    <lastmod>2023-11-16T19:25:36.531Z</lastmod>
   </url>
   <url>
     <loc>https://nasa-openscapes.github.io/2023-Cloud-Workshop-AGU/tutorials/Earthdata_Search_Discovery_earthaccess.html</loc>
-    <lastmod>2023-11-06T18:35:38.479Z</lastmod>
+    <lastmod>2023-11-16T19:33:16.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa-openscapes.github.io/2023-Cloud-Workshop-AGU/tutorials/Earthdata_Subset_and_Plot.html</loc>
+    <lastmod>2023-11-16T19:26:28.956Z</lastmod>
   </url>
 </urlset>
