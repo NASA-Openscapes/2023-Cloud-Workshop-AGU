@@ -34,4 +34,4 @@ Upon completion of the proposed workshop, participants will leave with a better 
 
 ## Acknowledgements
 
-This Workshop has been developed as a cross-DAAC collaboration by the NASA-Openscapes Team. Learn more at [nasa-openscapes.github.io](nasa-openscapes.github.io).
+This Workshop has been developed as a cross-DAAC collaboration by the NASA-Openscapes Team. Learn more at [nasa-openscapes.github.io](https://nasa-openscapes.github.io).
