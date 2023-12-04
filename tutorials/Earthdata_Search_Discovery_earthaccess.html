@@ -284,6 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>In this example we will use the <code>earthaccess</code> library to search for data collections from NASA Earthdata. <code>earthaccess</code> is a Python library that simplifies data discovery and access to NASA Earth science data by providing an abstraction layer for NASA’s <a href="https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html">Common Metadata Repository (CMR) API</a> Search API. The library makes searching for data more approachable by using a simpler notation instead of low level HTTP queries. <code>earthaccess</code> takes the trouble out of Earthdata Login <strong>authentication</strong>, makes <strong>search</strong> easier, and provides a stream-line way to download or stream search results into an <code>xarray</code> object.</p>
+<p>For more on <code>earthaccess</code> visit the <a href="https://github.com/nsidc/earthaccess"><code>earthaccess</code> GitHub</a> page and/or the <a href="https://earthaccess.readthedocs.io/en/latest/"><code>earthaccess</code> documentation</a> site. Be aware that <code>earthaccess</code> is under active development.</p>
 </section>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
@@ -310,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="authentication-for-nasa-earthdata" class="level3">
 <h3 class="anchored" data-anchor-id="authentication-for-nasa-earthdata">Authentication for NASA Earthdata</h3>
-<p>We will start by authenticating using our Earthdata Login credentials. Authentication is not necessarilly needed to search for publically available data collections in Earthdata, but is always need to download or access data from the NASA Earthdata archives. We can use <code>login</code> method from the <code>earthaccess</code> library here. This will create a authenticated session using our Earthdata Login credential. Our credentials can be passed along via <strong>environmental variables</strong> or by a <strong>.netrc</strong> file save in the home/user profile directory. If your credentials are not available in either location, we will be prompt to input our credentials and a <strong>.netrc</strong> will be created and saved for us.</p>
+<p>We will start by authenticating using our Earthdata Login credentials. Authentication is not necessarily needed to search for publicaly available data collections in Earthdata, but is always need to download or access data from the NASA Earthdata archives. We can use <code>login</code> method from the <code>earthaccess</code> library here. This will create a authenticated session using our Earthdata Login credential. Our credentials can be passed along via <strong>environmental variables</strong> or by a <strong>.netrc</strong> file save in the home/user profile directory. If your credentials are not available in either location, we will be prompt to input our credentials and a <strong>.netrc</strong> will be created and saved for us.</p>
 <div class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>auth <span class="op">=</span> earthaccess.login()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># are we authenticated?</span></span>
@@ -320,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>EARTHDATA_USERNAME and EARTHDATA_PASSWORD are not set in the current environment, try setting them or use a different strategy (netrc, interactive)
 You're now authenticated with NASA Earthdata Login
-Using token with expiration date: 11/27/2023
+Using token with expiration date: 02/02/2024
 Using .netrc file for EDL</code></pre>
 </div>
 </div>
@@ -359,60 +360,51 @@ Using .netrc file for EDL</code></pre>
 </tr>
 </tbody>
 </table>
-<p><todo> add Earthdata search/cmr search walkthrough</todo></p>
-<p><todo> investigate if there is a keyword search for collections…precip</todo></p>
-<div class="cell" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Query = earthaccess.collection_query().keyword('precip*')</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f'Collections found: {Query.hits()}')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># collections = Query.fields(['ShortName','DOI','Abstract']).get_all()</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># # Inspect 3 results printing just the ShortName and Abstract</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># collections[0]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>But wait…You may be asking “how can we find the <code>shortname</code>, <code>concept_id</code>, and <code>doi</code> for collections not in the table above?”. Let’s take a quick detour.</p>
+<p>https://search.earthdata.nasa.gov/search?q=GPM_3IMERGDF</p>
 <section id="search-by-collection" class="level4">
 <h4 class="anchored" data-anchor-id="search-by-collection">Search by collection</h4>
-<div class="cell" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>collection_id <span class="op">=</span> <span class="st">'C2723754864-GES_DISC'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>collection_id <span class="op">=</span> <span class="st">'C2723754864-GES_DISC'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> earthaccess.search_data(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    concept_id <span class="op">=</span> collection_id,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    cloud_hosted <span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">10</span>    <span class="co"># Restricting to 10 records returned</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> earthaccess.search_data(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    concept_id <span class="op">=</span> collection_id,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    cloud_hosted <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">10</span>    <span class="co"># Restricting to 10 records returned</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Granules found: 8400</code></pre>
 </div>
 </div>
 <p>In this example we used the <code>concept_id</code> parameter to search from our desired collection. However, there are multiple ways to specify the collection(s) we are interested in. Alternative parameters include:</p>
 <ul>
-<li><code>doi</code> - request collection by digital object indentifier (e.g., <code>doi</code> = ‘10.5067/GPM/IMERGDF/DAY/07’)<br>
+<li><code>doi</code> - request collection by digital object identifier (e.g., <code>doi</code> = ‘10.5067/GPM/IMERGDF/DAY/07’)<br>
 </li>
 <li><code>short_name</code> - request collection by CMR shortname (e.g., <code>short_name</code> = ‘GPM_3IMERGDF’)</li>
 </ul>
-<p><strong>NOTE:</strong> Each Earthdata collect has a unique <code>concept_id</code> and <code>doi</code>. This is not the case with <code>short_name</code>. A <strong>shortname</strong> can be associated with multiple versions of a collection. If multiple versions of a collection are publically available, using the <code>short_name</code> parameter with return all versions available. It is advised to use the <code>version</code> parameter in conjuction with the <code>short_name</code> parameter with searching.</p>
+<p><strong>NOTE:</strong> Each Earthdata collect has a unique <code>concept_id</code> and <code>doi</code>. This is not the case with <code>short_name</code>. A <strong>shortname</strong> can be associated with multiple versions of a collection. If multiple versions of a collection are publicaly available, using the <code>short_name</code> parameter with return all versions available. It is advised to use the <code>version</code> parameter in conjunction with the <code>short_name</code> parameter with searching.</p>
 <p>We can refine our search by passing more parameters that describe the spatiotemporal domain of our use case. Here, we use the <code>temporal</code> parameter to request a date range and the <code>bounding_box</code> parameter to request granules that intersect with a bounding box.</p>
 <p>For our bounding box, we are going to read in a GeoJSON file containing a single feature and extract the coordinate pairs for the southeast corner and the northwest corner (or lowerleft and upperright corners) of the bounding box around the feature.</p>
+<div class="cell" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>inGeojson <span class="op">=</span> gpd.read_file(<span class="st">'../../2023-Cloud-Workshop-AGU/data/sf_to_sierranvmt.geojson'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>xmin, ymin, xmax, ymax <span class="op">=</span> inGeojson.total_bounds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We will assign our start date and end date to a variable named <code>date_range</code> and we’ll assign the southeast and the northwest corner coordinates to a variable named <code>bbox</code> to be passed to our <code>earthaccess</code> search request.</p>
 <div class="cell" data-tags="[]" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>inGeojson <span class="op">=</span> gpd.read_file(<span class="st">'../../2023-Cloud-Workshop-AGU/data/sf_to_sierranvmt.geojson'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>date_range <span class="op">=</span> (<span class="st">"2022-11-19"</span>, <span class="st">"2023-04-06"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#bbox = (-127.0761, 31.6444, -113.9039, 42.6310)</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> (xmin, ymin, xmax, ymax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-tags="[]" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>xmin, ymin, xmax, ymax <span class="op">=</span> inGeojson.total_bounds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We will assign our start date and end date to a varialbe named <code>date_range</code> and we’ll assign the southeast and the northwest corner coordinates to a variable named <code>bbox</code> to be passed to our <code>earthaccess</code> search request.</p>
-<div class="cell" data-tags="[]" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>date_range <span class="op">=</span> (<span class="st">"2022-11-19"</span>, <span class="st">"2023-04-06"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#bbox = (-127.0761, 31.6444, -113.9039, 42.6310)</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> (xmin, ymin, xmax, ymax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> earthaccess.search_data(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    concept_id <span class="op">=</span> collection_id,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    cloud_hosted <span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    temporal <span class="op">=</span> date_range,</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    bounding_box <span class="op">=</span> bbox,</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> earthaccess.search_data(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    concept_id <span class="op">=</span> collection_id,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    cloud_hosted <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    temporal <span class="op">=</span> date_range,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    bounding_box <span class="op">=</span> bbox,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Granules found: 139</code></pre>
 </div>
@@ -429,82 +421,86 @@ Using .netrc file for EDL</code></pre>
 <li><code>cloud_cover = (0, 10)</code></li>
 </ul></li>
 </ul>
-<div class="cell" data-tags="[]" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># col_ids = ['C2723754864-GES_DISC', 'C1646609808-NSIDC_ECS', 'C2531308461-NSIDC_ECS', 'C2537927247-NSIDC_ECS']    # Specify a list of collections to pass to the search</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># results = earthaccess.search_data(</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     concept_id = col_ids,</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     #cloud_hosted = True,</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     temporal = date_range,</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     bounding_box = bbox,</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># col_ids = ['C2723754864-GES_DISC', 'C1646609808-NSIDC_ECS', 'C2531308461-NSIDC_ECS', 'C2537927247-NSIDC_ECS']    # Specify a list of collections to pass to the search</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># results = earthaccess.search_data(</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     concept_id = col_ids,</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     #cloud_hosted = True,</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     temporal = date_range,</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     bounding_box = bbox,</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="working-with-earthaccess-returns" class="level3">
 <h3 class="anchored" data-anchor-id="working-with-earthaccess-returns">Working with <code>earthaccess</code> returns</h3>
-<p><code>earthaccess</code> provides several convienence methods to help streamline processes that historically have be painful when done using traditional methods. Following the search for data, you’ll likely take one of two pathways with those results. You may choose to <strong>download</strong> the assets that have been returned to you or you may choose to continue working with the search results within the Python environment.</p>
+<p><code>earthaccess</code> provides several convenience methods to help streamline processes that historically have be painful when done using traditional methods. Following the search for data, you’ll likely take one of two pathways with those results. You may choose to <strong>download</strong> the assets that have been returned to you or you may choose to continue working with the search results within the Python environment.</p>
 <section id="download-earthaccess-results" class="level4">
 <h4 class="anchored" data-anchor-id="download-earthaccess-results">Download <code>earthaccess</code> results</h4>
 <p>In some cases you may want to download your assets. <code>earthaccess</code> makes downloading the data from the search results very easy using the <code>earthaccess.download()</code> function.</p>
-<div class="cell" data-tags="[]" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>downloaded_files <span class="op">=</span> earthaccess.download(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    results[<span class="dv">0</span>:<span class="dv">9</span>],</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    local_path<span class="op">=</span><span class="st">'../../2023-Cloud-Workshop-AGU/data'</span>,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>downloaded_files <span class="op">=</span> earthaccess.download(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    results[<span class="dv">0</span>:<span class="dv">9</span>],</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    local_path<span class="op">=</span><span class="st">'../../2023-Cloud-Workshop-AGU/data'</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Getting 9 granules, approx download size: 0.25 GB</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"305e0b6dfb53471fb8b4bd6e8b7e04f5","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"200f8bfbad624832ae6e524d39837fb9","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"c8e8470599404ddbae8e29a0e8edf356","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"2fe8f28ef0054f6e99c8a3d6a1556a9e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"1afbf90797f741dd84c45a917ceca6df","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"d420b5f80fad431ea6f6d7c07ab9424a","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
-<p>That was easy! <code>earthaccess</code> did a lot of heavy lifting for us. It identified the downloadable links, passed our Earthdata Login credentials, and save off the file with the proper name.</p>
+<p><code>earthaccess</code> did a lot of heavy lifting for us. It identified the downloadable links, passed our Earthdata Login credentials, and save off the file with the proper name. Amazing right!?</p>
+<p>We’re going to remove those files to keep our space clean.</p>
+<div class="cell" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm ..<span class="op">/</span>..<span class="op">/</span><span class="dv">2023</span><span class="op">-</span>Cloud<span class="op">-</span>Workshop<span class="op">-</span>AGU<span class="op">/</span>data<span class="op">/*</span>.nc4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="explore-earthaccess-search-response" class="level4">
 <h4 class="anchored" data-anchor-id="explore-earthaccess-search-response">Explore <code>earthaccess</code> search response</h4>
-<div class="cell" data-tags="[]" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The results variable is a </span><span class="sc">{</span><span class="bu">type</span>(results)<span class="sc">}</span><span class="ss"> of </span><span class="sc">{</span><span class="bu">type</span>(results[<span class="dv">0</span>])<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The results variable is a </span><span class="sc">{</span><span class="bu">type</span>(results)<span class="sc">}</span><span class="ss"> of </span><span class="sc">{</span><span class="bu">type</span>(results[<span class="dv">0</span>])<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The results variable is a &lt;class 'list'&gt; of &lt;class 'earthaccess.results.DataGranule'&gt;</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>139</code></pre>
 </div>
 </div>
 <p>We can explore the first item (<code>earthaccess.results.DataGranule</code>) in our list.</p>
-<div class="cell" data-tags="[]" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> results[<span class="dv">0</span>]</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> results[<span class="dv">0</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>earthaccess.results.DataGranule</code></pre>
 </div>
 </div>
 <p>Each item contains three keys that can be used to explore the item</p>
-<div class="cell" data-tags="[]" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>item.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>item.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>dict_keys(['meta', 'umm', 'size'])</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>item[<span class="st">'umm'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell" data-tags="[]" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>item[<span class="st">'umm'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>{'RelatedUrls': [{'URL': 'https://data.gesdisc.earthdata.nasa.gov/data/GPM_L3/GPM_3IMERGDF.07/2022/11/3B-DAY.MS.MRG.3IMERG.20221119-S000000-E235959.V07.nc4',
    'Type': 'GET DATA',
    'Description': 'Download 3B-DAY.MS.MRG.3IMERG.20221119-S000000-E235959.V07.nc4'},
@@ -544,32 +540,32 @@ Using .netrc file for EDL</code></pre>
 </section>
 <section id="get-data-urls-s3-uris" class="level4">
 <h4 class="anchored" data-anchor-id="get-data-urls-s3-uris">Get data URLs / S3 URIs</h4>
-<p>Get links to data. The <code>data_links()</code> method is used to return the URL(s)/data link(s) for the item. By defalt the method returns the HTTPS URL to download or access the item.</p>
-<div class="cell" data-tags="[]" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>item.data_links()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<p>Get links to data. The <code>data_links()</code> method is used to return the URL(s)/data link(s) for the item. By default the method returns the HTTPS URL to download or access the item.</p>
+<div class="cell" data-tags="[]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>item.data_links()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>['https://data.gesdisc.earthdata.nasa.gov/data/GPM_L3/GPM_3IMERGDF.07/2022/11/3B-DAY.MS.MRG.3IMERG.20221119-S000000-E235959.V07.nc4']</code></pre>
 </div>
 </div>
 <p>The <code>data_links()</code> method can also be used to get the s3 URI when we want to perform direct s3 access of the data in the cloud. To get the s3 URI, pass <code>access = 'direct'</code> to the method.</p>
-<div class="cell" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>item.data_links(access<span class="op">=</span><span class="st">'direct'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell" data-tags="[]" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>item.data_links(access<span class="op">=</span><span class="st">'direct'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>['s3://gesdisc-cumulus-prod-protected/GPM_L3/GPM_3IMERGDF.07/2022/11/3B-DAY.MS.MRG.3IMERG.20221119-S000000-E235959.V07.nc4']</code></pre>
 </div>
 </div>
 <p>If we want to extract all of the data links from our search results and add or save them to a list, we can.</p>
-<div class="cell" data-tags="[]" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data_link_list <span class="op">=</span> []</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> granule <span class="kw">in</span> results:</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> asset <span class="kw">in</span> granule.data_links(access<span class="op">=</span><span class="st">'direct'</span>):</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>        data_link_list.append(asset)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tags="[]" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>data_link_list <span class="op">=</span> []</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> granule <span class="kw">in</span> results:</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> asset <span class="kw">in</span> granule.data_links(access<span class="op">=</span><span class="st">'direct'</span>):</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        data_link_list.append(asset)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data_link_list[<span class="dv">0</span>:<span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell" data-tags="[]" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data_link_list[<span class="dv">0</span>:<span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>['s3://gesdisc-cumulus-prod-protected/GPM_L3/GPM_3IMERGDF.07/2022/11/3B-DAY.MS.MRG.3IMERG.20221119-S000000-E235959.V07.nc4',
  's3://gesdisc-cumulus-prod-protected/GPM_L3/GPM_3IMERGDF.07/2022/11/3B-DAY.MS.MRG.3IMERG.20221120-S000000-E235959.V07.nc4',
  's3://gesdisc-cumulus-prod-protected/GPM_L3/GPM_3IMERGDF.07/2022/11/3B-DAY.MS.MRG.3IMERG.20221121-S000000-E235959.V07.nc4',
@@ -583,39 +579,39 @@ Using .netrc file for EDL</code></pre>
 </div>
 <p>We can pass or read these lists of data links into libraries like <code>xarray</code>, <code>rioxarray</code>, or <code>gdal</code>, but <code>earthaccess</code> has a built-in module for easily reading these data links in.</p>
 </section>
-<section id="pass-results-to-xarray" class="level4">
-<h4 class="anchored" data-anchor-id="pass-results-to-xarray">Pass results to <code>xarray</code></h4>
-<p>We pass the <code>earthaccess.open()</code> function to</p>
-<div class="cell" data-tags="[]" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fileset <span class="op">=</span> earthaccess.<span class="bu">open</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="open-results-in-xarray" class="level4">
+<h4 class="anchored" data-anchor-id="open-results-in-xarray">Open results in <code>xarray</code></h4>
+<p>We use <code>earthaccess</code>’s <code>open()</code> method to make a connection to and open the files from our search result.</p>
+<div class="cell" data-tags="[]" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fileset <span class="op">=</span> earthaccess.<span class="bu">open</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Opening 139 granules, approx size: 3.75 GB
-using endpoint: https://data.gesdisc.earthdata.nasa.gov/s3credentials</code></pre>
+<pre><code> Opening 139 granules, approx size: 3.75 GB</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"c9c171f90cf14595af1ad68e1d594af7","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"704d34c319654d059e8fbe8d76d85227","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"2ec595f1c58a4bab838cef9ac5a8f5e4","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"c6aee9eb4795429e857ac6d2fb6124cd","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"1d34444a88c844769c09bbcc379d8052","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"7e83291404514d8491a4b19f4e0e92ae","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_mfdataset(fileset, chunks <span class="op">=</span> {})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then we pass the <code>fileset</code> object to xarray.</p>
+<div class="cell" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> xr.open_mfdataset(fileset, chunks <span class="op">=</span> {})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Some really cool things just happened here! Not only were we able to seamlessly stream our <code>earthaccess</code> search results into a <code>xarray</code> <code>dataset</code> using the <code>open_mfdataset()</code> (multi-file) method, but <code>earthaccess</code> determined that we were working from within AWS us-west-2 and accessed the data via direct S3 access! We didn’t have to create a session or a filesystem to authenicate and connect to the data. <code>earthaccess</code> did this for us using the <code>auth</code> object we created at the beginning of this tutorial. If we were not working in AWS us-west-2, <code>earthaccess</code> would “automagically” switch to accessing the data via the HTTPS endpoints and would again handle the authentication for us.</p>
+<p>Some really cool things just happened here! Not only were we able to seamlessly stream our <code>earthaccess</code> search results into a <code>xarray</code> <code>dataset</code> using the <code>open_mfdataset()</code> (multi-file) method, but <code>earthaccess</code> determined that we were working from within AWS us-west-2 and accessed the data via direct S3 access! We didn’t have to create a session or a filesystem to authenticate and connect to the data. <code>earthaccess</code> did this for us using the <code>auth</code> object we created at the beginning of this tutorial. If we were not working in AWS us-west-2, <code>earthaccess</code> would “automagically” switch to accessing the data via the HTTPS endpoints and would again handle the authentication for us.</p>
 <p>Let’s take a quick lock at our <code>xarray</code> <code>dataset</code></p>
-<div class="cell" data-tags="[]" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell" data-tags="[]" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
 
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
@@ -1007,8 +1003,8 @@ Attributes:
     InputPointer:    3B-HHR.MS.MRG.3IMERG.20221119-S000000-E002959.0000.V07A....
     title:           GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 ...
     DOI:             10.5067/GPM/IMERGDF/DAY/07
-    ProductionTime:  2023-08-25T14:03:25.792Z</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input id="section-25f6aced-f4df-4e0e-b999-5753d3705746" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-25f6aced-f4df-4e0e-b999-5753d3705746" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 139</li><li><span class="xr-has-index">lon</span>: 3600</li><li><span class="xr-has-index">lat</span>: 1800</li><li><span>nv</span>: 2</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input id="section-ee2972f1-f4ec-448b-b6b3-e877ee91e98f" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-ee2972f1-f4ec-448b-b6b3-e877ee91e98f" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">lon</span></div><div class="xr-var-dims">(lon)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">-179.9 -179.9 ... 179.9 179.9</div><input id="attrs-efc5142d-fd71-49a1-af45-7b4d7e639355" class="xr-var-attrs-in" type="checkbox"><label for="attrs-efc5142d-fd71-49a1-af45-7b4d7e639355" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-ddac08cc-844e-4463-b464-964c22178a72" class="xr-var-data-in" type="checkbox"><label for="data-ddac08cc-844e-4463-b464-964c22178a72" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>Longitude</dd></dl></div><div class="xr-var-data"><pre>array([-179.95, -179.85, -179.75, ...,  179.75,  179.85,  179.95],
-      dtype=float32)</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">lat</span></div><div class="xr-var-dims">(lat)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">-89.95 -89.85 ... 89.85 89.95</div><input id="attrs-07b726a4-a87d-4a29-b92c-eeb5ac67c57a" class="xr-var-attrs-in" type="checkbox"><label for="attrs-07b726a4-a87d-4a29-b92c-eeb5ac67c57a" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-ddedb06a-e795-4cd9-9bd1-8771fc3e8ffc" class="xr-var-data-in" type="checkbox"><label for="data-ddedb06a-e795-4cd9-9bd1-8771fc3e8ffc" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>Latitude</dd></dl></div><div class="xr-var-data"><pre>array([-89.95, -89.85, -89.75, ...,  89.75,  89.85,  89.95])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">2022-11-19 ... 2023-04-06</div><input id="attrs-b3cdcfc1-e6bf-4fe2-88aa-3bcfe360701b" class="xr-var-attrs-in" type="checkbox"><label for="attrs-b3cdcfc1-e6bf-4fe2-88aa-3bcfe360701b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d14ba1fc-0c03-4f9b-b8cd-192f6e462a0f" class="xr-var-data-in" type="checkbox"><label for="data-d14ba1fc-0c03-4f9b-b8cd-192f6e462a0f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time</dd><dt><span>bounds :</span></dt><dd>time_bnds</dd></dl></div><div class="xr-var-data"><pre>array(['2022-11-19T00:00:00.000000000', '2022-11-20T00:00:00.000000000',
+    ProductionTime:  2023-08-25T14:03:25.792Z</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input id="section-478f9851-33d9-4d49-b511-c3ea92ede336" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-478f9851-33d9-4d49-b511-c3ea92ede336" class="xr-section-summary" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 139</li><li><span class="xr-has-index">lon</span>: 3600</li><li><span class="xr-has-index">lat</span>: 1800</li><li><span>nv</span>: 2</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input id="section-5060cf29-80a2-433b-ba26-6ba483a15467" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-5060cf29-80a2-433b-ba26-6ba483a15467" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">lon</span></div><div class="xr-var-dims">(lon)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">-179.9 -179.9 ... 179.9 179.9</div><input id="attrs-926a01de-b04f-40c3-9835-6bc5837fb55f" class="xr-var-attrs-in" type="checkbox"><label for="attrs-926a01de-b04f-40c3-9835-6bc5837fb55f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-3d70acc9-813e-4769-babd-80b0b3d0e667" class="xr-var-data-in" type="checkbox"><label for="data-3d70acc9-813e-4769-babd-80b0b3d0e667" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>Longitude</dd></dl></div><div class="xr-var-data"><pre>array([-179.95, -179.85, -179.75, ...,  179.75,  179.85,  179.95],
+      dtype=float32)</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">lat</span></div><div class="xr-var-dims">(lat)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">-89.95 -89.85 ... 89.85 89.95</div><input id="attrs-09488db2-a0e2-44d2-b114-3d6b86f21f42" class="xr-var-attrs-in" type="checkbox"><label for="attrs-09488db2-a0e2-44d2-b114-3d6b86f21f42" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-4eda5f2e-e807-401a-84ad-6e24b699cba9" class="xr-var-data-in" type="checkbox"><label for="data-4eda5f2e-e807-401a-84ad-6e24b699cba9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>Latitude</dd></dl></div><div class="xr-var-data"><pre>array([-89.95, -89.85, -89.75, ...,  89.75,  89.85,  89.95])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">2022-11-19 ... 2023-04-06</div><input id="attrs-a0a527e3-7b7d-4d82-bb98-746fd99b8688" class="xr-var-attrs-in" type="checkbox"><label for="attrs-a0a527e3-7b7d-4d82-bb98-746fd99b8688" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-7006591b-b6eb-4d08-9077-b476186bb191" class="xr-var-data-in" type="checkbox"><label for="data-7006591b-b6eb-4d08-9077-b476186bb191" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time</dd><dt><span>bounds :</span></dt><dd>time_bnds</dd></dl></div><div class="xr-var-data"><pre>array(['2022-11-19T00:00:00.000000000', '2022-11-20T00:00:00.000000000',
        '2022-11-21T00:00:00.000000000', '2022-11-22T00:00:00.000000000',
        '2022-11-23T00:00:00.000000000', '2022-11-24T00:00:00.000000000',
        '2022-11-25T00:00:00.000000000', '2022-11-26T00:00:00.000000000',
@@ -1077,7 +1073,7 @@ Attributes:
        '2023-03-31T00:00:00.000000000', '2023-04-01T00:00:00.000000000',
        '2023-04-02T00:00:00.000000000', '2023-04-03T00:00:00.000000000',
        '2023-04-04T00:00:00.000000000', '2023-04-05T00:00:00.000000000',
-       '2023-04-06T00:00:00.000000000'], dtype='datetime64[ns]')</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-55817c5e-2423-4110-aa8d-8e73988ccb37" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-55817c5e-2423-4110-aa8d-8e73988ccb37" class="xr-section-summary">Data variables: <span>(10)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>precipitation</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-d3d1b062-19be-449b-bccd-72a9ae5b877b" class="xr-var-attrs-in" type="checkbox"><label for="attrs-d3d1b062-19be-449b-bccd-72a9ae5b877b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-960c926e-8e2e-4f36-b216-91868e26c4ef" class="xr-var-data-in" type="checkbox"><label for="data-960c926e-8e2e-4f36-b216-91868e26c4ef" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>long_name :</span></dt><dd>Daily mean precipitation rate (combined microwave-IR) estimate. Formerly precipitationCal.</dd></dl></div><div class="xr-var-data">
+       '2023-04-06T00:00:00.000000000'], dtype='datetime64[ns]')</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-d3bd05da-e214-4c35-bd35-8b492668c828" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-d3bd05da-e214-4c35-bd35-8b492668c828" class="xr-section-summary">Data variables: <span>(10)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>precipitation</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-36de9aa2-713c-495f-aad7-211b87b90c5e" class="xr-var-attrs-in" type="checkbox"><label for="attrs-36de9aa2-713c-495f-aad7-211b87b90c5e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-6f6a5613-b377-42a6-959e-90a04e9a144a" class="xr-var-data-in" type="checkbox"><label for="data-6f6a5613-b377-42a6-959e-90a04e9a144a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>long_name :</span></dt><dd>Daily mean precipitation rate (combined microwave-IR) estimate. Formerly precipitationCal.</dd></dl></div><div class="xr-var-data">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <colgroup>
 <col style="width: 50%">
@@ -1721,7 +1717,7 @@ time nv
 </tbody>
 </table>
 </div>
-</div></li></ul></div></li><li class="xr-section-item"><input id="section-94e8ffa9-172b-4c1e-bef9-cd9d36ec374f" class="xr-section-summary-in" type="checkbox"><label for="section-94e8ffa9-172b-4c1e-bef9-cd9d36ec374f" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-47ac8fd9-6a94-4ab6-ba37-04e55f29cf02" class="xr-index-data-in" type="checkbox"><label for="index-47ac8fd9-6a94-4ab6-ba37-04e55f29cf02" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([ -179.9499969482422, -179.85000610351562,             -179.75,
+</div></li></ul></div></li><li class="xr-section-item"><input id="section-700416a1-f779-48d0-b738-0f8658e1a4fe" class="xr-section-summary-in" type="checkbox"><label for="section-700416a1-f779-48d0-b738-0f8658e1a4fe" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-9fa0ea93-b4cd-4bd8-ac9c-a6697ae2d594" class="xr-index-data-in" type="checkbox"><label for="index-9fa0ea93-b4cd-4bd8-ac9c-a6697ae2d594" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([ -179.9499969482422, -179.85000610351562,             -179.75,
               -179.64999389648438,  -179.5500030517578,  -179.4499969482422,
               -179.35000610351562,             -179.25, -179.14999389648438,
                -179.0500030517578,
@@ -1730,7 +1726,7 @@ time nv
                179.35000610351562,   179.4499969482422,   179.5500030517578,
                179.64999389648438,              179.75,  179.85000610351562,
                 179.9499969482422],
-             dtype='float64', name='lon', length=3600))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>lat</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-e3af71c4-2b4e-4938-9409-0caf4874a6b7" class="xr-index-data-in" type="checkbox"><label for="index-e3af71c4-2b4e-4938-9409-0caf4874a6b7" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([            -89.95, -89.85000000000001,             -89.75,
+             dtype='float64', name='lon', length=3600))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>lat</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-700f2dbe-d8b8-4a25-9b40-a63437755334" class="xr-index-data-in" type="checkbox"><label for="index-700f2dbe-d8b8-4a25-9b40-a63437755334" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([            -89.95, -89.85000000000001,             -89.75,
                           -89.65,             -89.55,             -89.45,
               -89.35000000000001,             -89.25,             -89.15,
                           -89.05,
@@ -1739,14 +1735,14 @@ time nv
                89.35000000000001,              89.45,              89.55,
                89.65000000000002,  89.75000000000001,  89.85000000000001,
                            89.95],
-             dtype='float64', name='lat', length=1800))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-b8602352-0eec-42a3-9c9f-20fcd08ebbaa" class="xr-index-data-in" type="checkbox"><label for="index-b8602352-0eec-42a3-9c9f-20fcd08ebbaa" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2022-11-19', '2022-11-20', '2022-11-21', '2022-11-22',
+             dtype='float64', name='lat', length=1800))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-d6dc27c1-1929-4b3f-8628-255f31bb55ad" class="xr-index-data-in" type="checkbox"><label for="index-d6dc27c1-1929-4b3f-8628-255f31bb55ad" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2022-11-19', '2022-11-20', '2022-11-21', '2022-11-22',
                '2022-11-23', '2022-11-24', '2022-11-25', '2022-11-26',
                '2022-11-27', '2022-11-28',
                ...
                '2023-03-28', '2023-03-29', '2023-03-30', '2023-03-31',
                '2023-04-01', '2023-04-02', '2023-04-03', '2023-04-04',
                '2023-04-05', '2023-04-06'],
-              dtype='datetime64[ns]', name='time', length=139, freq=None))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-3b5f3bad-7670-4c59-a95a-cc02a8cf62d9" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-3b5f3bad-7670-4c59-a95a-cc02a8cf62d9" class="xr-section-summary">Attributes: <span>(9)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>BeginDate :</span></dt><dd>2022-11-19</dd><dt><span>BeginTime :</span></dt><dd>00:00:00.000Z</dd><dt><span>EndDate :</span></dt><dd>2022-11-19</dd><dt><span>EndTime :</span></dt><dd>23:59:59.999Z</dd><dt><span>FileHeader :</span></dt><dd>StartGranuleDateTime=2022-11-19T00:00:00.000Z;
+              dtype='datetime64[ns]', name='time', length=139, freq=None))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-c1fcd2f8-8688-4af4-81f4-5d0ef5113780" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-c1fcd2f8-8688-4af4-81f4-5d0ef5113780" class="xr-section-summary">Attributes: <span>(9)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>BeginDate :</span></dt><dd>2022-11-19</dd><dt><span>BeginTime :</span></dt><dd>00:00:00.000Z</dd><dt><span>EndDate :</span></dt><dd>2022-11-19</dd><dt><span>EndTime :</span></dt><dd>23:59:59.999Z</dd><dt><span>FileHeader :</span></dt><dd>StartGranuleDateTime=2022-11-19T00:00:00.000Z;
 StopGranuleDateTime=2022-11-19T23:59:59.999Z</dd><dt><span>InputPointer :</span></dt><dd>3B-HHR.MS.MRG.3IMERG.20221119-S000000-E002959.0000.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S003000-E005959.0030.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S010000-E012959.0060.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S013000-E015959.0090.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S020000-E022959.0120.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S023000-E025959.0150.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S030000-E032959.0180.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S033000-E035959.0210.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S040000-E042959.0240.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S043000-E045959.0270.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S050000-E052959.0300.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S053000-E055959.0330.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S060000-E062959.0360.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S063000-E065959.0390.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S070000-E072959.0420.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S073000-E075959.0450.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S080000-E082959.0480.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S083000-E085959.0510.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S090000-E092959.0540.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S093000-E095959.0570.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S100000-E102959.0600.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S103000-E105959.0630.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S110000-E112959.0660.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S113000-E115959.0690.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S120000-E122959.0720.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S123000-E125959.0750.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S130000-E132959.0780.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S133000-E135959.0810.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S140000-E142959.0840.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S143000-E145959.0870.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S150000-E152959.0900.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S153000-E155959.0930.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S160000-E162959.0960.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S163000-E165959.0990.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S170000-E172959.1020.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S173000-E175959.1050.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S180000-E182959.1080.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S183000-E185959.1110.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S190000-E192959.1140.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S193000-E195959.1170.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S200000-E202959.1200.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S203000-E205959.1230.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S210000-E212959.1260.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S213000-E215959.1290.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S220000-E222959.1320.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S223000-E225959.1350.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S230000-E232959.1380.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S233000-E235959.1410.V07A.HDF5</dd><dt><span>title :</span></dt><dd>GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree (GPM_3IMERGDF)</dd><dt><span>DOI :</span></dt><dd>10.5067/GPM/IMERGDF/DAY/07</dd><dt><span>ProductionTime :</span></dt><dd>2023-08-25T14:03:25.792Z</dd></dl></div></li></ul></div></div>
 </div>
 </div>
