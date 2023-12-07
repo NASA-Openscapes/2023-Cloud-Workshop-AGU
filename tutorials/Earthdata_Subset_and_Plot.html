@@ -3174,7 +3174,8 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 <p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>Now let’s utilize the “Probability of liquid precipitation phase” (<code>probabilityLiquidPrecipitation</code>) variable to split apart the snow precipitation from everything else. And we’ll utilize <code>precipitation_cnt_cond</code> to filter out data points that had less than 0.01 mm/hr preciptation amounts.</p>
+<p>Now let’s utilize the “Probability of liquid precipitation phase” (<code>probabilityLiquidPrecipitation</code>) variable to split apart the snow precipitation from everything else. From the variable’s description attribute, we can see that “0=missing values; 1=likely solid; 100=likely liquid or no precipitation”.</p>
+<p>Moreover, we’ll utilize <code>precipitation_cnt_cond</code> to filter out data points that had less than 0.01 mm/hr preciptation amounts.</p>
 <div class="cell" data-tags="[]" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>snow <span class="op">=</span> ds_subset[<span class="st">'precipitation'</span>].where(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    (ds_subset.precipitation_cnt_cond<span class="op">&gt;</span><span class="dv">0</span>) <span class="op">&amp;</span> (ds_subset.probabilityLiquidPrecipitation <span class="op">==</span> <span class="dv">1</span>)</span>
