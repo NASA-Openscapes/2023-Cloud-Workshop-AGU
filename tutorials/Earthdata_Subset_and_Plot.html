@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,13 +97,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
@@ -109,9 +116,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">2023 NASA Openscapes AGU Workshop</span>
     </a>
@@ -123,65 +130,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-menu" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Menu</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-menu">    
         <li>
-    <a class="dropdown-item" href="../index.html" rel="" target="">
+    <a class="dropdown-item" href="../index.html">
  <span class="dropdown-text">Welcome</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../prerequisites.html" rel="" target="">
+    <a class="dropdown-item" href="../prerequisites.html">
  <span class="dropdown-text">Prerequisites</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../schedule.html" rel="" target="">
+    <a class="dropdown-item" href="../schedule.html">
  <span class="dropdown-text">Schedule</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides.html" rel="" target="">
+    <a class="dropdown-item" href="../slides.html">
  <span class="dropdown-text">Slides</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Tutorials</li>
         <li>
-    <a class="dropdown-item" href="../tutorials/Earthdata_Search_Discovery_earthaccess.html" rel="" target="">
+    <a class="dropdown-item" href="../tutorials/Earthdata_Search_Discovery_earthaccess.html">
  <span class="dropdown-text">Search &amp; Discovery</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tutorials/Earthdata_Subset_and_Plot.html" rel="" target="">
+    <a class="dropdown-item" href="../tutorials/Earthdata_Subset_and_Plot.html">
  <span class="dropdown-text">Access, Subset &amp; Plot</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Subset_and_Plot.html">Access, Subset &amp; Plot</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Subset_and_Plot.html">Access, Subset &amp; Plot</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../nasa-openscapes.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -239,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -283,12 +290,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#support" id="toc-support" class="nav-link" data-scroll-target="#support">Support</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/NASA-Openscapes/2023-Cloud-Workshop-AGU/blob/main/tutorials/Earthdata_Subset_and_Plot.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/NASA-Openscapes/2023-Cloud-Workshop-AGU/blob/main/tutorials/Earthdata_Subset_and_Plot.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Subset_and_Plot.html">Access, Subset &amp; Plot</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Part 2 of the In-cloud Science Workflow: Data subsetting and plotting with earthaccess, xarray, and harmony</h1>
 </div>
@@ -303,7 +310,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
@@ -332,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <section id="import-required-packages" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-packages">Import Required Packages</h3>
-<div class="cell" data-tags="[]" data-execution_count="1">
+<div id="f04a653d-b9e5-4cfe-a198-b5b612389742" class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppress warnings</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>warnings.simplefilter(<span class="st">'ignore'</span>)</span>
@@ -362,7 +371,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-
 <script type="application/javascript">
 (function(root) {
   function now() {
@@ -909,7 +917,7 @@ if (window.Jupyter !== undefined) {
 <section id="picking-up-where-we-left-off" class="level2">
 <h2 class="anchored" data-anchor-id="picking-up-where-we-left-off">Picking up where we left off</h2>
 <p>We will authenticate our Earthaccess session, and then open the results like we did in the Search &amp; Discovery section.</p>
-<div class="cell" data-tags="[]" data-execution_count="2">
+<div id="0fe0002f-c759-4611-8dd7-861b8bd38971" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>auth <span class="op">=</span> earthaccess.login()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># are we authenticated?</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> auth.authenticated:</span>
@@ -930,7 +938,7 @@ Using .netrc file for EDL</code></pre>
 <p>We will use the GPM IMERG Final Precipitation L3 Daily dataset for this tutorial. The IMERG Precipitation Rate provides the rain and snow rates in millimeters per hour (mm/hr). It is estimated by the Integrated Multi-satellitE Retrievals for Global Precipitation Measurement (GPM) (IMERG) algorithm. The IMERG algorithm uses passive-microwave data from the GPM constellation of satellites and infrared data from geosynchronous satellites. IMERG “morphs” observations to earlier or later times using wind from weather-model analyses. The daily IMERG dataset is derived from the half-hourly GPM_3IMERGHH. The derived result represents the final estimate of the daily mean precipitation rate in mm/day.</p>
 <p>The IMERG data has 0.1 x 0.1 degree latitude-longitude resolution (approximately 11 by 11 km at the Equator). The grid covers the globe, although precipitation cannot always be estimated near the Poles. The dataset and algorithm are described in the <a href="https://gpm1.gesdisc.eosdis.nasa.gov/data/GPM_L3/doc/README.GPM.pdf">data user guide</a> and the <a href="https://arthurhou.pps.eosdis.nasa.gov/Documents/IMERG_V07_ATBD_final.pdf">Algorithm Theoretical Basis Document (ATBD)</a>.</p>
 <p>Please cite the dataset as: &gt; Huffman, G.J., E.F. Stocker, D.T. Bolvin, E.J. Nelkin, Jackson Tan (2023), GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree V07, Edited by Andrey Savtchenko, Greenbelt, MD, Goddard Earth Sciences Data and Information Services Center (GES DISC), https://doi.org/10.5067/GPM/IMERGDF/DAY/07</p>
-<div class="cell" data-tags="[]" data-execution_count="3">
+<div id="3dbe9828-37e9-4949-846f-297057e5b0d5" class="cell" data-tags="[]" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>collection_id <span class="op">=</span> <span class="st">'C2723754864-GES_DISC'</span>  <span class="co"># GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree V07 (GPM_3IMERGDF)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Bounds within which we search for data granules</span></span>
@@ -972,7 +980,7 @@ Using .netrc file for EDL</code></pre>
 </div>
 <p>Note that <code>xarray</code> works with “lazy” computation whenever possible. In this case, the metadata are loaded into JupyterHub memory, but the data arrays and their values are not —&nbsp;until there is a need for them.</p>
 <p>Let’s print out all the variable names.</p>
-<div class="cell" data-tags="[]" data-execution_count="4">
+<div id="0f8beea9-bc30-4d02-9401-5b8605ad6847" class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v <span class="kw">in</span> ds.variables:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -992,21 +1000,21 @@ time_bnds</code></pre>
 </div>
 </div>
 <p>Of the variables listed above, we are interested in three variables: <code>precipitation</code>, <code>precipitation_cnt_cond</code>, and <code>probabilityLiquidPrecipitation</code>. Let’s print their attributes.</p>
-<div class="cell" data-tags="[]" data-execution_count="5">
+<div id="f0241c11-ac86-418a-92e4-bb289468cc16" class="cell" data-tags="[]" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ds.variables[<span class="st">'precipitation'</span>].attrs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>{'units': 'mm/day',
  'long_name': 'Daily mean precipitation rate (combined microwave-IR) estimate. Formerly precipitationCal.'}</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="6">
+<div id="91434dd4-8aad-4b95-9ee4-b5dce04c60a0" class="cell" data-tags="[]" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ds.variables[<span class="st">'precipitation_cnt_cond'</span>].attrs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>{'units': 'count',
  'long_name': 'Count of half-hourly precipitation retrievals for the day where precipitation is at least 0.01 mm/hr'}</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="7">
+<div id="635f9e55-aa5e-4c4a-a571-2f29917e360e" class="cell" data-tags="[]" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ds.variables[<span class="st">'probabilityLiquidPrecipitation'</span>].attrs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>{'units': 'percent',
@@ -1021,7 +1029,7 @@ time_bnds</code></pre>
 <p><img src="https://github.com/NASA-Openscapes/earthdata-cloud-cookbook/blob/main/examples/images/subsetting_diagram.png?raw=true" class="img-fluid" style="width:60.0%" alt="Three maps of the United States are present, with a red bounding box over the state of Colorado. Filtering and subsetting are demonstrated by overlaying SMAP L2 data, with data overlapping and cropping the rectangle, respectively."></p>
 <p>There are three primary types of subsetting that we will walk through: 1. Temporal 2. Spatial 3. Variable</p>
 <p>In each case, we will be excluding parts of the dataset that are not wanted using <code>xarray</code>. Note that “subsetting” is also called a data “transformation”.</p>
-<div class="cell" data-tags="[]" data-execution_count="8">
+<div id="a228b00d-9659-4766-b25b-d9ba82506006" class="cell" data-tags="[]" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ds.time.values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array(['2023-02-24T00:00:00.000000000', '2023-02-25T00:00:00.000000000',
@@ -1029,11 +1037,11 @@ time_bnds</code></pre>
 </div>
 </div>
 <p>We start with a subset that represents the U.S. state of California. Notice the dimensions of the Dataset and each variable —&nbsp;time, lon, lat, and ‘nv’ (number of vertices) for the bounds variable.</p>
-<div class="cell" data-tags="[]" data-execution_count="9">
+<div id="29355579-79f2-4ebf-b7d7-5a5c60a59d2e" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the full dataset's metadata</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-
+<div>
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -1454,10 +1462,15 @@ Attributes: (9)</pre><div class="xr-wrap" style="display:none"><div class="xr-he
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
+</div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>precipitation_cnt</span>
 </div>
@@ -1470,7 +1483,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-e7662121-a566-4938-a3e2-f9af8772ae25" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-e7662121-a566-4938-a3e2-f9af8772ae25" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-182c0044-154c-4a9c-90e9-5d3dcaaab14b" class="xr-var-data-in" type="checkbox">
+<label for="data-182c0044-154c-4a9c-90e9-5d3dcaaab14b" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1520,11 +1544,15 @@ Count of all valid half-hourly precipitation retrievals for the day
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>precipitation_cnt_cond</span>
 </div>
@@ -1537,7 +1565,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-583d7977-2f7a-48f3-9b55-24b9c75c514b" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-583d7977-2f7a-48f3-9b55-24b9c75c514b" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-386530c1-5c62-4208-94b0-1f1cd058cde1" class="xr-var-data-in" type="checkbox">
+<label for="data-386530c1-5c62-4208-94b0-1f1cd058cde1" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1587,11 +1626,15 @@ Count of half-hourly precipitation retrievals for the day where precipitation is
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>MWprecipitation</span>
 </div>
@@ -1604,7 +1647,18 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-ce2df96a-7228-4f16-b706-923ddd6a9878" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-ce2df96a-7228-4f16-b706-923ddd6a9878" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-53d66a48-7acf-408f-afdd-1271570ec3d2" class="xr-var-data-in" type="checkbox">
+<label for="data-53d66a48-7acf-408f-afdd-1271570ec3d2" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1654,11 +1708,15 @@ Daily mean High Quality precipitation rate from all available microwave sources.
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>MWprecipitation_cnt</span>
 </div>
@@ -1671,7 +1729,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-44a7bc70-4c6a-4d89-a173-af7df5373f68" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-44a7bc70-4c6a-4d89-a173-af7df5373f68" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-6f1db91c-055c-4924-a241-ce33504abb70" class="xr-var-data-in" type="checkbox">
+<label for="data-6f1db91c-055c-4924-a241-ce33504abb70" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1721,11 +1790,15 @@ Count of all valid half-hourly MWprecipitation retrievals for the day
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>MWprecipitation_cnt_cond</span>
 </div>
@@ -1738,7 +1811,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-736b0ad8-2701-4601-a3f7-a694a7f656cb" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-736b0ad8-2701-4601-a3f7-a694a7f656cb" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-f8a87efe-6500-43e2-a9d5-baaf2990605f" class="xr-var-data-in" type="checkbox">
+<label for="data-f8a87efe-6500-43e2-a9d5-baaf2990605f" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1788,11 +1872,15 @@ Count of half-hourly MWprecipitation retrievals for the day where precipitation 
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>randomError</span>
 </div>
@@ -1805,7 +1893,18 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-7eb8fda6-016b-4b8d-a59d-dde93cb866e5" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-7eb8fda6-016b-4b8d-a59d-dde93cb866e5" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-735112a8-8351-422f-8e4a-091ff0a7a869" class="xr-var-data-in" type="checkbox">
+<label for="data-735112a8-8351-422f-8e4a-091ff0a7a869" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1855,11 +1954,15 @@ Root-mean-square error estimate for combined microwave-IR daily precipitation ra
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>randomError_cnt</span>
 </div>
@@ -1872,7 +1975,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-f805955b-00bc-4767-bca6-8c37bf3c5b04" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-f805955b-00bc-4767-bca6-8c37bf3c5b04" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-fae802a6-3c3a-4abe-9a48-700c2e309aeb" class="xr-var-data-in" type="checkbox">
+<label for="data-fae802a6-3c3a-4abe-9a48-700c2e309aeb" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1922,11 +2036,15 @@ Count of valid half-hourly randomError retrievals for the day
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>probabilityLiquidPrecipitation</span>
 </div>
@@ -1939,7 +2057,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-b239ecb1-a86b-4f61-8a41-2d41365337b5" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-b239ecb1-a86b-4f61-8a41-2d41365337b5" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-821b9cb7-629d-4bde-b9f4-d9049e8f5c7a" class="xr-var-data-in" type="checkbox">
+<label for="data-821b9cb7-629d-4bde-b9f4-d9049e8f5c7a" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -1993,11 +2122,15 @@ Probability of liquid precipitation estimated with a diagnostic parameterization
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM0IiBoZWlnaHQ9IjE4NCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIxMCIgeTE9IjAiIHgyPSIyNCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTAiIHkxPSIxMjAiIHgyPSIyNCIgeTI9IjEzNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjEwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iMTQiIHkyPSIxMjQiPjwvbGluZT4KICA8bGluZSB4MT0iMTkiIHkxPSI5IiB4Mj0iMTkiIHkyPSIxMjkiPjwvbGluZT4KICA8bGluZSB4MT0iMjQiIHkxPSIxNCIgeDI9IjI0IiB5Mj0iMTM0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTM0Ljk0ODU5Nzk0OTc1NDQgMTAuMCwxMjAuMCIgc3R5bGU9ImZpbGw6I0VDQjE3MkEwO3N0cm9rZS13aWR0aDowIj48L3BvbHlnb24+CgogIDwhLS0gSG9yaXpvbnRhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMTAiIHkxPSIwIiB4Mj0iNzAiIHkyPSIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTQiIHkxPSI0IiB4Mj0iNzQiIHkyPSI0Ij48L2xpbmU+CiAgPGxpbmUgeDE9IjE5IiB5MT0iOSIgeDI9Ijc5IiB5Mj0iOSI+PC9saW5lPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjEwIiB5MT0iMCIgeDI9IjI0IiB5Mj0iMTQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI3MCIgeTE9IjAiIHgyPSI4NCIgeTI9IjE0IiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjEwLjAsMC4wIDcwLjAsMC4wIDg0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIDI0Ljk0ODU5Nzk0OTc1NDQsMTQuOTQ4NTk3OTQ5NzU0NDAzIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxNCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjI0IiB5MT0iMTM0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIyNCIgeTE9IjE0IiB4Mj0iMjQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4NCIgeTE9IjE0IiB4Mj0iODQiIHkyPSIxMzQiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIENvbG9yZWQgUmVjdGFuZ2xlIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxNC45NDg1OTc5NDk3NTQ0MDMgODQuOTQ4NTk3OTQ5NzU0NCwxMzQuOTQ4NTk3OTQ5NzU0NCAyNC45NDg1OTc5NDk3NTQ0LDEzNC45NDg1OTc5NDk3NTQ0IiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjU0Ljk0ODU5OCIgeT0iMTU0Ljk0ODU5OCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE4MDA8L3RleHQ+CiAgPHRleHQgeD0iMTA0Ljk0ODU5OCIgeT0iNzQuOTQ4NTk4IiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwLDEwNC45NDg1OTgsNzQuOTQ4NTk4KSI+MzYwMDwvdGV4dD4KICA8dGV4dCB4PSI3LjQ3NDI5OSIgeT0iMTQ3LjQ3NDI5OSIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDQ1LDcuNDc0Mjk5LDE0Ny40NzQyOTkpIj4zPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="134" height="184" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="10" y1="120" x2="24" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="10" y2="120" style="stroke-width:2"></line> <line x1="14" y1="4" x2="14" y2="124"></line> <line x1="19" y1="9" x2="19" y2="129"></line> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 24.9485979497544,14.948597949754403 24.9485979497544,134.9485979497544 10.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="10" y1="0" x2="70" y2="0" style="stroke-width:2"></line> <line x1="14" y1="4" x2="74" y2="4"></line> <line x1="19" y1="9" x2="79" y2="9"></line> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="10" y1="0" x2="24" y2="14" style="stroke-width:2"></line> <line x1="70" y1="0" x2="84" y2="14" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="10.0,0.0 70.0,0.0 84.9485979497544,14.948597949754403 24.9485979497544,14.948597949754403" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Horizontal lines --> <line x1="24" y1="14" x2="84" y2="14" style="stroke-width:2"></line> <line x1="24" y1="134" x2="84" y2="134" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="24" y1="14" x2="24" y2="134" style="stroke-width:2"></line> <line x1="84" y1="14" x2="84" y2="134" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="24.9485979497544,14.948597949754403 84.9485979497544,14.948597949754403 84.9485979497544,134.9485979497544 24.9485979497544,134.9485979497544" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="54.948598" y="154.948598" font-size="1.0rem" font-weight="100" text-anchor="middle">1800</text> <text x="104.948598" y="74.948598" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,104.948598,74.948598)">3600</text> <text x="7.474299" y="147.474299" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.474299,147.474299)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>time_bnds</span>
 </div>
@@ -2010,7 +2143,18 @@ datetime64[ns]
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(1, 2), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-29128f9e-dbe3-418c-acc9-ded1aa61dd8a" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-29128f9e-dbe3-418c-acc9-ded1aa61dd8a" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-ac152db5-037a-40cb-bbae-9c3ca623dea4" class="xr-var-data-in" type="checkbox">
+<label for="data-ac152db5-037a-40cb-bbae-9c3ca623dea4" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>coordinates :</span></dt>
@@ -2056,12 +2200,14 @@ time nv
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjgwIiB5Mj0iMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CiAgPGxpbmUgeDE9IjAiIHkxPSI0MCIgeDI9IjgwIiB5Mj0iNDAiPjwvbGluZT4KICA8bGluZSB4MT0iMCIgeTE9IjgwIiB4Mj0iODAiIHkyPSI4MCI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iODAiIHkyPSIxMjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgoKICA8IS0tIFZlcnRpY2FsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxMjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSI4MCIgeTE9IjAiIHgyPSI4MCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDgwLjAsMC4wIDgwLjAsMTIwLjAgMC4wLDEyMC4wIiBzdHlsZT0iZmlsbDojRUNCMTcyQTA7c3Ryb2tlLXdpZHRoOjAiPjwvcG9seWdvbj4KCiAgPCEtLSBUZXh0IC0tPgogIDx0ZXh0IHg9IjQwLjAwMDAwMCIgeT0iMTQwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+CiAgPHRleHQgeD0iMTAwLjAwMDAwMCIgeT0iNjAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCwxMDAuMDAwMDAwLDYwLjAwMDAwMCkiPjM8L3RleHQ+Cjwvc3ZnPg==" class="img-fluid"></td>
+<td><svg width="130" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="80" y2="0" style="stroke-width:2"></line> <line x1="0" y1="40" x2="80" y2="40"></line> <line x1="0" y1="80" x2="80" y2="80"></line> <line x1="0" y1="120" x2="80" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="80" y1="0" x2="80" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 80.0,0.0 80.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="40.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">2</text> <text x="100.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,100.000000,60.000000)">3</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div></li></ul></div></li><li class="xr-section-item"><input id="section-79ccf0e5-2007-4207-b74f-9d054a6a2393" class="xr-section-summary-in" type="checkbox"><label for="section-79ccf0e5-2007-4207-b74f-9d054a6a2393" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-5f5fd4e7-cdef-43a2-8a4a-7899ab43ccd8" class="xr-index-data-in" type="checkbox"><label for="index-5f5fd4e7-cdef-43a2-8a4a-7899ab43ccd8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([ -179.9499969482422, -179.85000610351562,             -179.75,
+</li></ul></div></li></ul></div><li class="xr-section-item"><input id="section-79ccf0e5-2007-4207-b74f-9d054a6a2393" class="xr-section-summary-in" type="checkbox"><label for="section-79ccf0e5-2007-4207-b74f-9d054a6a2393" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-5f5fd4e7-cdef-43a2-8a4a-7899ab43ccd8" class="xr-index-data-in" type="checkbox"><label for="index-5f5fd4e7-cdef-43a2-8a4a-7899ab43ccd8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([ -179.9499969482422, -179.85000610351562,             -179.75,
               -179.64999389648438,  -179.5500030517578,  -179.4499969482422,
               -179.35000610351562,             -179.25, -179.14999389648438,
                -179.0500030517578,
@@ -2080,15 +2226,16 @@ time nv
                89.65000000000002,  89.75000000000001,  89.85000000000001,
                            89.95],
              dtype='float64', name='lat', length=1800))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-f74b895c-82ac-4804-abc5-04b4361cfc55" class="xr-index-data-in" type="checkbox"><label for="index-f74b895c-82ac-4804-abc5-04b4361cfc55" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2023-02-24', '2023-02-25', '2023-02-26'], dtype='datetime64[ns]', name='time', freq=None))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-fd8b9e2f-350c-4da2-a33b-ab20d831adea" class="xr-section-summary-in" type="checkbox"><label for="section-fd8b9e2f-350c-4da2-a33b-ab20d831adea" class="xr-section-summary">Attributes: <span>(9)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>BeginDate :</span></dt><dd>2023-02-24</dd><dt><span>BeginTime :</span></dt><dd>00:00:00.000Z</dd><dt><span>EndDate :</span></dt><dd>2023-02-24</dd><dt><span>EndTime :</span></dt><dd>23:59:59.999Z</dd><dt><span>FileHeader :</span></dt><dd>StartGranuleDateTime=2023-02-24T00:00:00.000Z;
-StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span></dt><dd>3B-HHR.MS.MRG.3IMERG.20230224-S000000-E002959.0000.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S003000-E005959.0030.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S010000-E012959.0060.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S013000-E015959.0090.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S020000-E022959.0120.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S023000-E025959.0150.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S030000-E032959.0180.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S033000-E035959.0210.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S040000-E042959.0240.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S043000-E045959.0270.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S050000-E052959.0300.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S053000-E055959.0330.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S060000-E062959.0360.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S063000-E065959.0390.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S070000-E072959.0420.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S073000-E075959.0450.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S080000-E082959.0480.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S083000-E085959.0510.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S090000-E092959.0540.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S093000-E095959.0570.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S100000-E102959.0600.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S103000-E105959.0630.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S110000-E112959.0660.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S113000-E115959.0690.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S120000-E122959.0720.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S123000-E125959.0750.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S130000-E132959.0780.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S133000-E135959.0810.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S140000-E142959.0840.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S143000-E145959.0870.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S150000-E152959.0900.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S153000-E155959.0930.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S160000-E162959.0960.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S163000-E165959.0990.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S170000-E172959.1020.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S173000-E175959.1050.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S180000-E182959.1080.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S183000-E185959.1110.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S190000-E192959.1140.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S193000-E195959.1170.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S200000-E202959.1200.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S203000-E205959.1230.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S210000-E212959.1260.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S213000-E215959.1290.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S220000-E222959.1320.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S223000-E225959.1350.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S230000-E232959.1380.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S233000-E235959.1410.V07A.HDF5</dd><dt><span>title :</span></dt><dd>GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree (GPM_3IMERGDF)</dd><dt><span>DOI :</span></dt><dd>10.5067/GPM/IMERGDF/DAY/07</dd><dt><span>ProductionTime :</span></dt><dd>2023-08-29T08:52:09.517Z</dd></dl></div></li></ul></div></div>
+StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span></dt><dd>3B-HHR.MS.MRG.3IMERG.20230224-S000000-E002959.0000.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S003000-E005959.0030.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S010000-E012959.0060.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S013000-E015959.0090.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S020000-E022959.0120.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S023000-E025959.0150.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S030000-E032959.0180.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S033000-E035959.0210.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S040000-E042959.0240.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S043000-E045959.0270.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S050000-E052959.0300.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S053000-E055959.0330.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S060000-E062959.0360.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S063000-E065959.0390.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S070000-E072959.0420.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S073000-E075959.0450.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S080000-E082959.0480.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S083000-E085959.0510.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S090000-E092959.0540.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S093000-E095959.0570.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S100000-E102959.0600.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S103000-E105959.0630.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S110000-E112959.0660.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S113000-E115959.0690.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S120000-E122959.0720.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S123000-E125959.0750.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S130000-E132959.0780.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S133000-E135959.0810.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S140000-E142959.0840.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S143000-E145959.0870.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S150000-E152959.0900.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S153000-E155959.0930.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S160000-E162959.0960.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S163000-E165959.0990.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S170000-E172959.1020.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S173000-E175959.1050.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S180000-E182959.1080.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S183000-E185959.1110.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S190000-E192959.1140.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S193000-E195959.1170.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S200000-E202959.1200.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S203000-E205959.1230.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S210000-E212959.1260.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S213000-E215959.1290.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S220000-E222959.1320.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S223000-E225959.1350.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S230000-E232959.1380.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S233000-E235959.1410.V07A.HDF5</dd><dt><span>title :</span></dt><dd>GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree (GPM_3IMERGDF)</dd><dt><span>DOI :</span></dt><dd>10.5067/GPM/IMERGDF/DAY/07</dd><dt><span>ProductionTime :</span></dt><dd>2023-08-29T08:52:09.517Z</dd></dl></div></li></div></div>
 </div>
 </div>
+</section></section></main></div>
 <p>Now we will prepare a subset. We’re using essentially the same spatial bounds as above; however, as opposed to the <code>earthaccess</code> inputs above, here we must provide inputs in the formats expected by <code>xarray</code>. Instead of a single, four-element, bounding box, we use Python <code>slice</code> objects, which are defined by starting and ending numbers.</p>
-<div class="cell" data-tags="[]" data-execution_count="10">
+<div id="e3b5b217-246c-4549-8e7d-773dec50bf40" class="cell" data-tags="[]" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ds_subset <span class="op">=</span> ds.sel(time<span class="op">=</span><span class="st">'2023-02-24'</span>, lat<span class="op">=</span><span class="bu">slice</span>(<span class="dv">31</span>, <span class="dv">43</span>), lon<span class="op">=</span><span class="bu">slice</span>(<span class="op">-</span><span class="dv">125</span>, <span class="op">-</span><span class="dv">113</span>)) </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>ds_subset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-
+<div>
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -2533,10 +2680,15 @@ Attributes: (9)</pre><div class="xr-wrap" style="display:none"><div class="xr-he
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
+</div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>precipitation_cnt</span>
 </div>
@@ -2549,7 +2701,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-2e52907c-d8e1-4a48-bb55-fd115af34072" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-2e52907c-d8e1-4a48-bb55-fd115af34072" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-5697ba66-a956-472a-a7f6-cb4dc27b224e" class="xr-var-data-in" type="checkbox">
+<label for="data-5697ba66-a956-472a-a7f6-cb4dc27b224e" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -2599,11 +2762,15 @@ Count of all valid half-hourly precipitation retrievals for the day
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>precipitation_cnt_cond</span>
 </div>
@@ -2616,7 +2783,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-870784ff-03ef-4a2d-955a-4189b5b43d6d" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-870784ff-03ef-4a2d-955a-4189b5b43d6d" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-bb027024-2e77-44e0-9b51-893370bbfc01" class="xr-var-data-in" type="checkbox">
+<label for="data-bb027024-2e77-44e0-9b51-893370bbfc01" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -2666,11 +2844,15 @@ Count of half-hourly precipitation retrievals for the day where precipitation is
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>MWprecipitation</span>
 </div>
@@ -2683,7 +2865,18 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-78a5d267-77be-412a-90c5-395a9166cf62" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-78a5d267-77be-412a-90c5-395a9166cf62" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-f3310b30-4882-4155-8f98-16b68bca734b" class="xr-var-data-in" type="checkbox">
+<label for="data-f3310b30-4882-4155-8f98-16b68bca734b" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -2733,11 +2926,15 @@ Daily mean High Quality precipitation rate from all available microwave sources.
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>MWprecipitation_cnt</span>
 </div>
@@ -2750,7 +2947,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-365bca67-b09d-4339-a2c7-f80e9c35f024" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-365bca67-b09d-4339-a2c7-f80e9c35f024" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-a6fb2212-c2ba-48b2-ad62-352578b26f80" class="xr-var-data-in" type="checkbox">
+<label for="data-a6fb2212-c2ba-48b2-ad62-352578b26f80" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -2800,11 +3008,15 @@ Count of all valid half-hourly MWprecipitation retrievals for the day
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>MWprecipitation_cnt_cond</span>
 </div>
@@ -2817,7 +3029,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-1f4c5f94-0fcf-474f-93bb-396849b00645" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-1f4c5f94-0fcf-474f-93bb-396849b00645" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-cc9eeb20-9af5-45f5-ba62-d423d5593a26" class="xr-var-data-in" type="checkbox">
+<label for="data-cc9eeb20-9af5-45f5-ba62-d423d5593a26" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -2867,11 +3090,15 @@ Count of half-hourly MWprecipitation retrievals for the day where precipitation 
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>randomError</span>
 </div>
@@ -2884,7 +3111,18 @@ float32
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-6b10d938-2a53-4cb7-a89b-96ad92048646" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-6b10d938-2a53-4cb7-a89b-96ad92048646" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-481453f5-3f83-4aad-8a7e-a91330ce399f" class="xr-var-data-in" type="checkbox">
+<label for="data-481453f5-3f83-4aad-8a7e-a91330ce399f" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -2934,11 +3172,15 @@ Root-mean-square error estimate for combined microwave-IR daily precipitation ra
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>randomError_cnt</span>
 </div>
@@ -2951,7 +3193,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-b983d1d8-bbfb-4327-88d6-8efcf23d2684" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-b983d1d8-bbfb-4327-88d6-8efcf23d2684" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-5e539e44-75f7-40a5-ad1d-6756886a6ca4" class="xr-var-data-in" type="checkbox">
+<label for="data-5e539e44-75f7-40a5-ad1d-6756886a6ca4" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -3001,11 +3254,15 @@ Count of valid half-hourly randomError retrievals for the day
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>probabilityLiquidPrecipitation</span>
 </div>
@@ -3018,7 +3275,18 @@ int8
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(120, 120), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-5f517d16-4bab-4ff5-a00b-a371d802d1cd" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-5f517d16-4bab-4ff5-a00b-a371d802d1cd" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-0036561f-2e68-4d68-8a76-7a43b630a8bb" class="xr-var-data-in" type="checkbox">
+<label for="data-0036561f-2e68-4d68-8a76-7a43b630a8bb" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>units :</span></dt>
@@ -3072,11 +3340,15 @@ Probability of liquid precipitation estimated with a diagnostic parameterization
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjE3MCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iMTIwIiB4Mj0iMTIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBWZXJ0aWNhbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMTIwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjEyMCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gQ29sb3JlZCBSZWN0YW5nbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIwLjAsMC4wIDEyMC4wLDAuMCAxMjAuMCwxMjAuMCAwLjAsMTIwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSIxNDAuMDAwMDAwIiBmb250LXNpemU9IjEuMHJlbSIgZm9udC13ZWlnaHQ9IjEwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTIwPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjYwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCwxNDAuMDAwMDAwLDYwLjAwMDAwMCkiPjEyMDwvdGV4dD4KPC9zdmc+" class="img-fluid"></td>
+<td><svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">120</text> <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">120</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li class="xr-var-item">
 <div class="xr-var-name">
 <span>time_bnds</span>
 </div>
@@ -3089,7 +3361,18 @@ datetime64[ns]
 <div class="xr-var-preview xr-preview">
 dask.array&lt;chunksize=(2,), meta=np.ndarray&gt;
 </div>
-<img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWZpbGUtdGV4dDIiPjx1c2UgeGxpbms6aHJlZj0iI2ljb24tZmlsZS10ZXh0MiI+PC91c2U+PC9zdmc+" class="icon xr-icon-file-text2 img-fluid"><img src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiB4ci1pY29uLWRhdGFiYXNlIj48dXNlIHhsaW5rOmhyZWY9IiNpY29uLWRhdGFiYXNlIj48L3VzZT48L3N2Zz4=" class="icon xr-icon-database img-fluid">
+<input id="attrs-d82d7abe-7f13-4529-8544-1e78cb65d906" class="xr-var-attrs-in" type="checkbox">
+<label for="attrs-d82d7abe-7f13-4529-8544-1e78cb65d906" title="Show/Hide attributes">
+<svg class="icon xr-icon-file-text2">
+<use href="#icon-file-text2"></use>
+</svg>
+</label>
+<input id="data-d7a435f0-c867-4860-a53e-0efa859c4259" class="xr-var-data-in" type="checkbox">
+<label for="data-d7a435f0-c867-4860-a53e-0efa859c4259" title="Show/Hide data repr">
+<svg class="icon xr-icon-database">
+<use href="#icon-database"></use>
+</svg>
+</label>
 <div class="xr-var-attrs">
 <dl>
 <dt><span>coordinates :</span></dt>
@@ -3135,12 +3418,14 @@ time nv
 </tr>
 </tbody>
 </table></td>
-<td><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcwIiBoZWlnaHQ9IjExMCIgc3R5bGU9InN0cm9rZTpyZ2IoMCwwLDApO3N0cm9rZS13aWR0aDoxIj4KCiAgPCEtLSBIb3Jpem9udGFsIGxpbmVzIC0tPgogIDxsaW5lIHgxPSIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjAiIHN0eWxlPSJzdHJva2Utd2lkdGg6MiI+PC9saW5lPgogIDxsaW5lIHgxPSIwIiB5MT0iNjAiIHgyPSIxMjAiIHkyPSI2MCIgc3R5bGU9InN0cm9rZS13aWR0aDoyIj48L2xpbmU+CgogIDwhLS0gVmVydGljYWwgbGluZXMgLS0+CiAgPGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjYwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KICA8bGluZSB4MT0iMTIwIiB5MT0iMCIgeDI9IjEyMCIgeTI9IjYwIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjIiPjwvbGluZT4KCiAgPCEtLSBDb2xvcmVkIFJlY3RhbmdsZSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjAuMCwwLjAgMTIwLjAsMC4wIDEyMC4wLDYwLjAgMC4wLDYwLjAiIHN0eWxlPSJmaWxsOiNFQ0IxNzJBMDtzdHJva2Utd2lkdGg6MCI+PC9wb2x5Z29uPgoKICA8IS0tIFRleHQgLS0+CiAgPHRleHQgeD0iNjAuMDAwMDAwIiB5PSI4MC4wMDAwMDAiIGZvbnQtc2l6ZT0iMS4wcmVtIiBmb250LXdlaWdodD0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4yPC90ZXh0PgogIDx0ZXh0IHg9IjE0MC4wMDAwMDAiIHk9IjMwLjAwMDAwMCIgZm9udC1zaXplPSIxLjByZW0iIGZvbnQtd2VpZ2h0PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAsMTQwLjAwMDAwMCwzMC4wMDAwMDApIj4xPC90ZXh0Pgo8L3N2Zz4=" class="img-fluid"></td>
+<td><svg width="170" height="110" style="stroke:rgb(0,0,0);stroke-width:1">
+<!-- Horizontal lines --> <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2"></line> <line x1="0" y1="60" x2="120" y2="60" style="stroke-width:2"></line> <!-- Vertical lines --> <line x1="0" y1="0" x2="0" y2="60" style="stroke-width:2"></line> <line x1="120" y1="0" x2="120" y2="60" style="stroke-width:2"></line> <!-- Colored Rectangle --> <polygon points="0.0,0.0 120.0,0.0 120.0,60.0 0.0,60.0" style="fill:#ECB172A0;stroke-width:0"></polygon> <!-- Text --> <text x="60.000000" y="80.000000" font-size="1.0rem" font-weight="100" text-anchor="middle">2</text> <text x="140.000000" y="30.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,30.000000)">1</text>
+</svg></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div></li></ul></div></li><li class="xr-section-item"><input id="section-36f52a77-1eea-4422-8a2b-74d437878013" class="xr-section-summary-in" type="checkbox"><label for="section-36f52a77-1eea-4422-8a2b-74d437878013" class="xr-section-summary">Indexes: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-6feb19d0-9bfc-48f2-8b37-cd7ae09473b0" class="xr-index-data-in" type="checkbox"><label for="index-6feb19d0-9bfc-48f2-8b37-cd7ae09473b0" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([-124.94999694824219,  -124.8499984741211,             -124.75,
+</li></ul></div></li></ul></div><li class="xr-section-item"><input id="section-36f52a77-1eea-4422-8a2b-74d437878013" class="xr-section-summary-in" type="checkbox"><label for="section-36f52a77-1eea-4422-8a2b-74d437878013" class="xr-section-summary">Indexes: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-6feb19d0-9bfc-48f2-8b37-cd7ae09473b0" class="xr-index-data-in" type="checkbox"><label for="index-6feb19d0-9bfc-48f2-8b37-cd7ae09473b0" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([-124.94999694824219,  -124.8499984741211,             -124.75,
                -124.6500015258789, -124.55000305175781, -124.44999694824219,
                -124.3499984741211,             -124.25,  -124.1500015258789,
               -124.05000305175781,
@@ -3159,24 +3444,29 @@ time nv
                42.64999999999999, 42.750000000000014,  42.85000000000001,
                            42.95],
              dtype='float64', name='lat', length=120))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-9a689a56-0edf-4d36-b5ca-4beb1d73ba59" class="xr-section-summary-in" type="checkbox"><label for="section-9a689a56-0edf-4d36-b5ca-4beb1d73ba59" class="xr-section-summary">Attributes: <span>(9)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>BeginDate :</span></dt><dd>2023-02-24</dd><dt><span>BeginTime :</span></dt><dd>00:00:00.000Z</dd><dt><span>EndDate :</span></dt><dd>2023-02-24</dd><dt><span>EndTime :</span></dt><dd>23:59:59.999Z</dd><dt><span>FileHeader :</span></dt><dd>StartGranuleDateTime=2023-02-24T00:00:00.000Z;
-StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span></dt><dd>3B-HHR.MS.MRG.3IMERG.20230224-S000000-E002959.0000.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S003000-E005959.0030.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S010000-E012959.0060.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S013000-E015959.0090.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S020000-E022959.0120.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S023000-E025959.0150.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S030000-E032959.0180.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S033000-E035959.0210.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S040000-E042959.0240.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S043000-E045959.0270.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S050000-E052959.0300.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S053000-E055959.0330.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S060000-E062959.0360.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S063000-E065959.0390.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S070000-E072959.0420.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S073000-E075959.0450.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S080000-E082959.0480.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S083000-E085959.0510.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S090000-E092959.0540.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S093000-E095959.0570.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S100000-E102959.0600.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S103000-E105959.0630.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S110000-E112959.0660.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S113000-E115959.0690.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S120000-E122959.0720.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S123000-E125959.0750.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S130000-E132959.0780.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S133000-E135959.0810.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S140000-E142959.0840.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S143000-E145959.0870.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S150000-E152959.0900.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S153000-E155959.0930.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S160000-E162959.0960.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S163000-E165959.0990.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S170000-E172959.1020.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S173000-E175959.1050.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S180000-E182959.1080.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S183000-E185959.1110.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S190000-E192959.1140.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S193000-E195959.1170.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S200000-E202959.1200.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S203000-E205959.1230.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S210000-E212959.1260.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S213000-E215959.1290.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S220000-E222959.1320.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S223000-E225959.1350.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S230000-E232959.1380.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S233000-E235959.1410.V07A.HDF5</dd><dt><span>title :</span></dt><dd>GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree (GPM_3IMERGDF)</dd><dt><span>DOI :</span></dt><dd>10.5067/GPM/IMERGDF/DAY/07</dd><dt><span>ProductionTime :</span></dt><dd>2023-08-29T08:52:09.517Z</dd></dl></div></li></ul></div></div>
+StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span></dt><dd>3B-HHR.MS.MRG.3IMERG.20230224-S000000-E002959.0000.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S003000-E005959.0030.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S010000-E012959.0060.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S013000-E015959.0090.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S020000-E022959.0120.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S023000-E025959.0150.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S030000-E032959.0180.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S033000-E035959.0210.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S040000-E042959.0240.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S043000-E045959.0270.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S050000-E052959.0300.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S053000-E055959.0330.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S060000-E062959.0360.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S063000-E065959.0390.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S070000-E072959.0420.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S073000-E075959.0450.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S080000-E082959.0480.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S083000-E085959.0510.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S090000-E092959.0540.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S093000-E095959.0570.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S100000-E102959.0600.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S103000-E105959.0630.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S110000-E112959.0660.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S113000-E115959.0690.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S120000-E122959.0720.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S123000-E125959.0750.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S130000-E132959.0780.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S133000-E135959.0810.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S140000-E142959.0840.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S143000-E145959.0870.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S150000-E152959.0900.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S153000-E155959.0930.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S160000-E162959.0960.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S163000-E165959.0990.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S170000-E172959.1020.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S173000-E175959.1050.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S180000-E182959.1080.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S183000-E185959.1110.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S190000-E192959.1140.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S193000-E195959.1170.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S200000-E202959.1200.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S203000-E205959.1230.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S210000-E212959.1260.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S213000-E215959.1290.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S220000-E222959.1320.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S223000-E225959.1350.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S230000-E232959.1380.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20230224-S233000-E235959.1410.V07A.HDF5</dd><dt><span>title :</span></dt><dd>GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree (GPM_3IMERGDF)</dd><dt><span>DOI :</span></dt><dd>10.5067/GPM/IMERGDF/DAY/07</dd><dt><span>ProductionTime :</span></dt><dd>2023-08-29T08:52:09.517Z</dd></dl></div></li></div></div>
 </div>
 </div>
+
 <p>Notice the differences?</p>
-</section>
+
 <section id="plotting" class="level3">
-<h3 class="anchored" data-anchor-id="plotting">Plotting</h3>
+<h3 data-anchor-id="plotting">Plotting</h3>
 <p>We will first plot using the methods built-in to the <code>xarray</code> package.</p>
 <p>Note that, as opposed to the “lazy” loading of metadata previously, this will now perform “eager” computation, pulling the required data chunks.</p>
-<div class="cell" data-tags="[]" data-execution_count="11">
+<div id="d97b5757-eb9e-4816-b2c8-5516823080ae" class="cell" data-tags="[]" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ds_subset[<span class="st">'precipitation'</span>].plot(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>), x<span class="op">=</span><span class="st">'lon'</span>, y<span class="op">=</span><span class="st">'lat'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Now let’s utilize the “Probability of liquid precipitation phase” (<code>probabilityLiquidPrecipitation</code>) variable to split apart the snow precipitation from everything else. From the variable’s description attribute, we can see that “0=missing values; 1=likely solid; 100=likely liquid or no precipitation”.</p>
 <p>Moreover, we’ll utilize <code>precipitation_cnt_cond</code> to filter out data points that had less than 0.01 mm/hr preciptation amounts.</p>
-<div class="cell" data-tags="[]" data-execution_count="12">
+<div id="5c8222e6-df93-496b-ac47-0dcff427fb33" class="cell" data-tags="[]" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>snow <span class="op">=</span> ds_subset[<span class="st">'precipitation'</span>].where(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    (ds_subset.precipitation_cnt_cond<span class="op">&gt;</span><span class="dv">0</span>) <span class="op">&amp;</span> (ds_subset.probabilityLiquidPrecipitation <span class="op">==</span> <span class="dv">1</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -3187,7 +3477,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 </div>
 <p>In the following plotting commands, we utilize <code>cartopy</code> and <code>matplotlib</code> to generate a more customized figure.</p>
 <p><code>cartopy</code> is used to set the map projection (to PlateCarree) and to add U.S. state boundary lines to the figure. <code>matplotlib</code>’s pcolormesh is used to generate the color plot, with colors determined by the third argument’s value.</p>
-<div class="cell" data-tags="[]" data-execution_count="13">
+<div id="62e9dcc1-c311-4bef-8a65-08beb54f0453" class="cell" data-tags="[]" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the plot</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> ccrs.PlateCarree()</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>), dpi<span class="op">=</span><span class="dv">130</span>, facecolor<span class="op">=</span><span class="st">"w"</span>, subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>proj))</span>
@@ -3203,33 +3493,37 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 <span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Notice the enhancements?</p>
 <p>Also, note that you can explore these (and other) data before generating your own customized plots, by using NASA Worldview. <a href="https://worldview.earthdata.nasa.gov/?v=-156.13974252713064,12.501303538340089,-58.87926564851792,62.28255353834009&amp;l=Reference_Labels_15m(hidden),Reference_Features_15m(hidden),Coastlines_15m,IMERG_Precipitation_Rate,VIIRS_NOAA20_CorrectedReflectance_TrueColor(hidden),VIIRS_SNPP_CorrectedReflectance_TrueColor(hidden),MODIS_Aqua_CorrectedReflectance_TrueColor(hidden),MODIS_Terra_CorrectedReflectance_TrueColor(hidden)&amp;lg=true&amp;t=2023-02-24-T10%3A00%3A00Z">Here’s a link</a> to an example map on Worldview for these IMERG data.</p>
 </section>
-</section>
+
 <section id="example-2---harmony-py-subsetting---precipitable-water-from-dscovr-epic-composite" class="level2">
-<h2 class="anchored" data-anchor-id="example-2---harmony-py-subsetting---precipitable-water-from-dscovr-epic-composite">Example 2 - Harmony-py Subsetting - Precipitable Water from DSCOVR-EPIC Composite</h2>
+<h2 data-anchor-id="example-2---harmony-py-subsetting---precipitable-water-from-dscovr-epic-composite">Example 2 - Harmony-py Subsetting - Precipitable Water from DSCOVR-EPIC Composite</h2>
 <section id="dataset-1" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-1">Dataset</h3>
+<h3 data-anchor-id="dataset-1">Dataset</h3>
 <p>The NASA Earth Polychromatic Imaging Camera (EPIC)-view Multi-Sensor Global Cloud and Radiance Composites are generated by optimally merging together multiple imagers on low Earth orbit (LEO) satellites (including MODIS, VIIRS, and AVHRR) and geostationary (GEO) satellites (including GOES-13 and -15, METEOSAT-7 and -10, MTSAT-2, and Himawari-8). These provide a seamless global composite product at 5-km resolution by using an aggregated rating that considers five parameters (nominal satellite resolution, pixel time relative to the Earth Polychromatic Imaging Camera (EPIC) observation time, viewing zenith angle, distance from day/night terminator, and sun glint factor) and selects the best observation at the time nearest to the EPIC measurements. The global composite data are then remapped into the EPIC Field of View (FOV) by convolving the high-resolution cloud properties with the EPIC point spread function (PSF) defined with a half-pixel accuracy to produce the EPIC composite. PSF-weighted radiances and cloud properties averages are computed separately for each cloud phase. Ancillary data (i.e., surface type, snow and ice map, skin temperature, precipitable water, etc.) needed for anisotropic factor selections are also included in the composite. These composite images are produced for each observation time of the EPIC instrument (typically 300 to 600 composites per month, or every 1 to 3 hours).</p>
 <p>The dataset and development of the composite product is described in the <a href="https://doi.org/10.1117/12.2278645">Khlopenkov et al., 2017</a> and the <a href="http://doi.org/10.5067/EPIC/DSCOVR/L2_COMPOSITE_01">Product Description page</a>. This dataset can also be viewed in <a href="https://cmr.earthdata.nasa.gov/search/concepts/C1576365803-LARC_ASDC.html">Earthdata Search</a>.</p>
 <p>Please cite the dataset as: &gt; NASA/LARC/SD/ASDC. (2017). EPIC-view satellite composites for DSCOVR, Version 1 [Data set]. NASA Langley Atmospheric Science Data Center DAAC. Retrieved from https://doi.org/10.5067/EPIC/DSCOVR/L2_COMPOSITE_01.</p>
 </section>
 <section id="harmony" class="level3">
-<h3 class="anchored" data-anchor-id="harmony">Harmony</h3>
+<h3 data-anchor-id="harmony">Harmony</h3>
 <p><a href="https://www.earthdata.nasa.gov/learn/articles/harmony-in-the-cloud">Harmony</a> is the behind-the-scenes orchestrator for much of the cloud-based transformations happening on NASA’s <a href="https://search.earthdata.nasa.gov/search">Earthdata Search</a> interface. However, requests can also be sent directly to Harmony in a programmatic fashion, either through use of the <code>harmony-py</code> Python library or through transmitting underlying HTTP requests. In this example, we demonstrate the use of <code>harmony-py</code>, which was created as an alternative to Harmony’s RESTful Application Programming Interface (API) and to make it more convenient to invoke Harmony directly from a Python environment, such as Jupyter notebooks or larger Python applications.</p>
 <p>Note that additional examples can be found on the <code>harmony-py</code> GitHub page <a href="https://github.com/nasa/harmony-py/tree/main">here</a>.</p>
 <p>First we need to instantiate a <code>Client</code> object, with which we will be able to interact with Harmony.</p>
-<div class="cell" data-tags="[]" data-execution_count="14">
+<div id="583e324b-88c9-4726-af33-ff07367dcf28" class="cell" data-tags="[]" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>harmony_client <span class="op">=</span> Client()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="inspecting-a-data-collection-for-its-capabilities-and-variables" class="level4">
-<h4 class="anchored" data-anchor-id="inspecting-a-data-collection-for-its-capabilities-and-variables">Inspecting a data collection for its capabilities and variables</h4>
+<h4 data-anchor-id="inspecting-a-data-collection-for-its-capabilities-and-variables">Inspecting a data collection for its capabilities and variables</h4>
 <p>With harmony-py, you can request a report of the capabilities that are configured for a given collection. We use that function here to inspect the DSCOVR EPIC-view Composite collection.</p>
-<div class="cell" data-tags="[]" data-execution_count="15">
+<div id="db162b89-de86-4bb0-b620-4257d9af6b92" class="cell" data-tags="[]" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>collection_id <span class="op">=</span> <span class="st">"C1576365803-LARC_ASDC"</span>  <span class="co"># EPIC-view satellite composites for DSCOVR, Version 1</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>capabilities_request <span class="op">=</span> CapabilitiesRequest(collection_id<span class="op">=</span>collection_id)</span>
@@ -3238,7 +3532,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>capabilities_str <span class="op">=</span> json.dumps(capabilities, indent<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This data collection has one “service” associated with it, which provides several subsetting capabilities.</p>
-<div class="cell" data-tags="[]" data-execution_count="16">
+<div id="4b59af1b-7338-40f9-8965-80339436f6a1" class="cell" data-tags="[]" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pprint(capabilities[<span class="st">"services"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'capabilities': {'output_formats': ['application/netcdf',
@@ -3252,7 +3546,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 </div>
 </div>
 <p>We can also see the list of variables associated with this data collection.</p>
-<div class="cell" data-tags="[]" data-execution_count="17">
+<div id="3fbe4b39-df2c-4189-9eb9-aadeb1b492c0" class="cell" data-tags="[]" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pprint([v[<span class="st">"name"</span>] <span class="cf">for</span> v <span class="kw">in</span> capabilities[<span class="st">"variables"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['clear_sky/BT_10.8um',
@@ -3364,7 +3658,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 </div>
 </div>
 <p>The subsetter service capabilities told us what the service is capable of “in general”. How about the capabilities reported for this data collection in particular?</p>
-<div class="cell" data-tags="[]" data-execution_count="18">
+<div id="90865d24-6bbc-46ff-97a4-05f7d8fb4f3b" class="cell" data-tags="[]" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pprint({key: val </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> key, val <span class="kw">in</span> capabilities.items() </span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> key <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'services'</span>, <span class="st">'variables'</span>]}</span>
@@ -3385,17 +3679,17 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 </section>
 </section>
 <section id="subsetting-1" class="level3">
-<h3 class="anchored" data-anchor-id="subsetting-1">Subsetting</h3>
+<h3 data-anchor-id="subsetting-1">Subsetting</h3>
 <section id="define-an-area-of-interest" class="level4">
-<h4 class="anchored" data-anchor-id="define-an-area-of-interest">Define an area of interest</h4>
+<h4 data-anchor-id="define-an-area-of-interest">Define an area of interest</h4>
 <p>For this example, we will use a GeoJSON to specify a non-rectangular region instead of a simpler, rectangular bounding box. We will use the GeoJSON that defines a region around San Francisco.</p>
-<div class="cell" data-tags="[]" data-execution_count="19">
+<div id="33249e74-603d-4030-a2df-1b19df50fce1" class="cell" data-tags="[]" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the GeoJSON into a GeoDataFrame</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>sf_geojson <span class="op">=</span> <span class="st">'../../2023-Cloud-Workshop-AGU/data/sf_to_sierranvmt.geojson'</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(sf_geojson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here we illustrate the use of GeoViews, which is another open source data visualization library, like <code>matplotlib</code>. GeoViews is designed to work well with netCDF data, as well as Geopandas dataframes. The syntax for Geoviews is different in several ways —&nbsp;e.g., the dataset is often specified as the first argument and different components are combined using the <code>*</code> symbol.</p>
-<div class="cell" data-tags="[]" data-execution_count="20">
+<div id="58c13872-3ca2-436e-ae53-3c22ce07e60c" class="cell" data-tags="[]" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We define a Geoview Point so we can visualize the area of interest in relation to San Francisco</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>sf <span class="op">=</span> (<span class="op">-</span><span class="fl">122.42</span>, <span class="fl">37.77</span>, <span class="st">'SanFrancisco'</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>cities_lonlat <span class="op">=</span> gv.Points([sf], vdims<span class="op">=</span><span class="st">'City'</span>)</span>
@@ -3479,9 +3773,9 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 </div>
 </section>
 <section id="build-a-harmony-subsetting-request" class="level4">
-<h4 class="anchored" data-anchor-id="build-a-harmony-subsetting-request">Build a Harmony subsetting request</h4>
+<h4 data-anchor-id="build-a-harmony-subsetting-request">Build a Harmony subsetting request</h4>
 <p>A Harmony request can include spatial, temporal, and variable subsetting all in the same request. Here we will request all three types of subsetting to be performed on the EPIC-view Composite dataset.</p>
-<div class="cell" data-tags="[]" data-execution_count="21">
+<div id="f02d190d-81f3-4fd2-b92e-5345769b85ca" class="cell" data-tags="[]" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>collection_id <span class="op">=</span> <span class="st">"C1576365803-LARC_ASDC"</span>  <span class="co"># (~9 to 12 minutes to process) EPIC-view satellite composites for DSCOVR, Version 1</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>request <span class="op">=</span> Request(</span>
@@ -3498,14 +3792,14 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 <pre><code>True</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="22">
+<div id="2ca89302-42f0-4017-ba0f-a6e348b8dc1d" class="cell" data-tags="[]" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>job_id <span class="op">=</span> harmony_client.submit(request)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>job_id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>'696ab111-4e7b-4aa9-bbff-d91c60533cc6'</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="23">
+<div id="044b95c6-4312-4d99-acfc-6eea0e28056d" class="cell" data-tags="[]" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>harmony_client.status(job_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>{'status': 'running',
@@ -3521,7 +3815,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
  'data_expiration_local': '2024-01-06T20:41:23+00:00'}</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="24">
+<div id="2abe3ac3-5172-4218-ba44-0b063abdbac1" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>harmony_client.wait_for_processing(job_id, show_progress<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code> [ Processing: 100% ] |###################################################| [|]</code></pre>
@@ -3531,7 +3825,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 <p>(Futher information and examples can be found in the <code>harmony-py</code> repository, such as <a href="https://github.com/nasa/harmony-py/blob/main/examples/intro_tutorial.ipynb">this introductory notebook</a>.)</p>
 </section>
 <section id="request-parameters" class="level4">
-<h4 class="anchored" data-anchor-id="request-parameters">Request Parameters</h4>
+<h4 data-anchor-id="request-parameters">Request Parameters</h4>
 <p>In addition to the above request parameters, other advanced parameters may be of interest. Note that many reformatting or advanced projection options may not be available for your requested dataset. See the documentation for details on how to construct these parameters.</p>
 <ul>
 <li><code>crs</code>: Reproject the output coverage to the given CRS. Recognizes CRS types that can be inferred by gdal, including EPSG codes, Proj4 strings, and OGC URLs (http://www.opengis.net/def/crs/%E2%80%A6)</li>
@@ -3546,7 +3840,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 </ul>
 </section>
 <section id="harmony-client" class="level4">
-<h4 class="anchored" data-anchor-id="harmony-client">Harmony Client</h4>
+<h4 data-anchor-id="harmony-client">Harmony Client</h4>
 <p>There are four options for providing your Earthdata Login token or username and password when creating a Harmony Client:</p>
 <ol type="1">
 <li>Provide EDL token using environment variable, e.g.:</li>
@@ -3584,7 +3878,7 @@ StopGranuleDateTime=2023-02-24T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 <p>``` machine urs.earthdata.nasa.gov login captainmarvel password marve10u5</p>
 </blockquote>
 <pre><code>
-::: {.cell tags='[]' execution_count=25}
+::: {#dcdf99d8-74c1-49cf-b65d-38ea1ef0e5e4 .cell tags='[]' execution_count=25}
 ``` {.python .cell-code}
 harmony_client.status(job_id)</code></pre>
 <div class="cell-output cell-output-display" data-execution_count="25">
@@ -3601,14 +3895,14 @@ harmony_client.status(job_id)</code></pre>
  'data_expiration_local': '2024-01-06T20:41:23+00:00'}</code></pre>
 </div>
 <p>:::</p>
-<div class="cell" data-tags="[]" data-execution_count="26">
+<div id="4d996a53-6cf4-40c3-a5c5-06d932956609" class="cell" data-tags="[]" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> harmony_client.result_json(job_id, show_progress<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code> [ Processing: 100% ] |###################################################| [|]</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="27">
+<div id="80f432ab-17aa-4fe8-b99a-831dd59725ed" class="cell" data-tags="[]" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Downloading results:'</span>)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>futures <span class="op">=</span> harmony_client.download_all(job_id)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3629,11 +3923,10 @@ DSCOVR_EPIC_L2_COMPOSITE_01_20160225T004500Z_subsetted.nc4
 Done downloading.</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="28">
+<div id="ef2b5dea-e0ba-4574-90b7-f087c94605b7" class="cell" data-tags="[]" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>new_ds_general <span class="op">=</span> xr.open_dataset(filenames[<span class="dv">0</span>], group<span class="op">=</span><span class="st">"general"</span>, decode_times<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>new_ds_general</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -4011,8 +4304,8 @@ Data variables:
 </section>
 </section>
 <section id="plotting-1" class="level3">
-<h3 class="anchored" data-anchor-id="plotting-1">Plotting</h3>
-<div class="cell" data-tags="[]" data-execution_count="29">
+<h3 data-anchor-id="plotting-1">Plotting</h3>
+<div id="629911d9-8b17-44b0-8e3d-2e630a521495" class="cell" data-tags="[]" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>precip_attrs <span class="op">=</span> new_ds_general[<span class="st">'precipitable_water'</span>].attrs</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>precip_attrs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
@@ -4021,7 +4314,7 @@ Data variables:
  'valid_range': array([    0, 50000], dtype=uint16)}</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="30">
+<div id="1c01834c-1ce1-4993-8b43-9a8bc9a862b9" class="cell" data-tags="[]" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> ccrs.PlateCarree()</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>), facecolor<span class="op">=</span><span class="st">"w"</span>, subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>proj))</span>
@@ -4047,21 +4340,25 @@ Data variables:
 <span id="cb48-23"><a href="#cb48-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-24"><a href="#cb48-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-31-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-31-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>A final note about <code>harmony-py</code>: As more transformation services are added and configured to work with existing and new NASA data collections, the capabilities you will be able to harness with <code>harmony-py</code> will also grow!</p>
 </section>
 </section>
 <section id="appendix-1---snow-cover-from-modisterra-daily-level3" class="level2">
-<h2 class="anchored" data-anchor-id="appendix-1---snow-cover-from-modisterra-daily-level3">Appendix 1 - Snow Cover from MODIS/Terra, Daily Level3</h2>
+<h2 data-anchor-id="appendix-1---snow-cover-from-modisterra-daily-level3">Appendix 1 - Snow Cover from MODIS/Terra, Daily Level3</h2>
 <section id="dataset-2" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-2">Dataset</h3>
+<h3 data-anchor-id="dataset-2">Dataset</h3>
 <p>We will use MODIS/Terra Snow Cover Daily L3 Global 0.05Deg CMG. The Moderate Resolution Imaging Spectroradiometer (MODIS) global Level-3 (L3) data set provides the percentage of snow-covered land and cloud-covered land observed daily, within 0.05° (approx. 5 km) MODIS Climate Modeling Grid (CMG) cells.</p>
 <p>The dataset and algorithm is described in the <a href="https://nsidc.org/sites/default/files/mod10c1-v061-userguide_0.pdf">data user guide</a> and the <a href="https://nsidc.org/sites/default/files/c61_modis_snow_user_guide.pdf">Product Specific Document</a>.</p>
 <p>Please cite the dataset as: &gt; Hall, D. K. and G. A. Riggs. (2021). MODIS/Terra Snow Cover Daily L3 Global 0.05Deg CMG, Version 61. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. https://doi.org/10.5067/MODIS/MOD10C1.061.</p>
 <p>Using the dataset DOI, we will use the earthaccess module to search for dataset granules from February 24, 2023, and March 2, 2023.</p>
-<div class="cell" data-execution_count="31">
+<div id="619d7bd6-d47c-463c-a3c7-95821b525bc9" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>doi <span class="op">=</span> <span class="st">'10.5067/MODIS/MOD10C1.061'</span> <span class="co"># MODIS Terra Snowcover</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># search granules from Feb 15, 2023</span></span>
@@ -4084,7 +4381,7 @@ Granules found: 1</code></pre>
 </div>
 </div>
 <p>Let’s download the granules to the local environment. This is needed as direct access to HDF4 files that MODIS Collection 6.1 comes as is currently not supported. The <code>earthaccess</code> module manages the authentication that is required for accessing data.</p>
-<div class="cell" data-execution_count="32">
+<div id="3a5b41eb-e646-4d42-96a1-073e2646fcde" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>earthaccess.download(granules1, local_path<span class="op">=</span><span class="st">'.'</span>)</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>earthaccess.download(granules2, local_path<span class="op">=</span><span class="st">'.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4127,9 +4424,9 @@ Granules found: 1</code></pre>
 </div>
 </section>
 <section id="subsetting-2" class="level3">
-<h3 class="anchored" data-anchor-id="subsetting-2">Subsetting</h3>
+<h3 data-anchor-id="subsetting-2">Subsetting</h3>
 <p>Let’s open the downloaded granules into a <code>rioxarray</code>. The variable <code>Day_CMG_Snow_Cover</code> provides daily percent snow in 5km grids. The variable <code>Snow_Spatial_QA</code> provides quality indicator for each grid: 0=best, 1=good, 2=ok, 3=poor, 4=other, 237=inland water, 239=ocean, 250=cloud obscured water 252=Antarctica mask, 253=not mapped, 254=no retrieval, and 255=fill. We will only use the grids with 0, 1, and 2 quality flags.</p>
-<div class="cell" data-execution_count="33">
+<div id="f9ae3517-5564-469b-bd28-e08ab20833a2" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># open granule from Feb 15, 2023</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>g_1 <span class="op">=</span> Path(Path(granules1[<span class="dv">0</span>].data_links()[<span class="dv">0</span>]).name)</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> g_1.is_file():</span>
@@ -4174,8 +4471,8 @@ Attributes: (50)</code></pre>
 </div>
 </section>
 <section id="plotting-2" class="level3">
-<h3 class="anchored" data-anchor-id="plotting-2">Plotting</h3>
-<div class="cell" data-tags="[]" data-execution_count="34">
+<h3 data-anchor-id="plotting-2">Plotting</h3>
+<div id="3b458b84-e042-4a9b-94de-96c21d16ffca" class="cell" data-tags="[]" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the plot</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> ccrs.PlateCarree()</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">4</span>), dpi<span class="op">=</span><span class="dv">130</span>, facecolor<span class="op">=</span><span class="st">"w"</span>, subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>proj))</span>
@@ -4191,19 +4488,23 @@ Attributes: (50)</code></pre>
 <span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Snow Cover </span><span class="sc">{</span>date2<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-35-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-35-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 </section>
 <section id="appendix-2---snow-mass-from-smap-3-hourly-level-4" class="level2">
-<h2 class="anchored" data-anchor-id="appendix-2---snow-mass-from-smap-3-hourly-level-4">Appendix 2 - Snow Mass from SMAP, 3-hourly Level 4</h2>
+<h2 data-anchor-id="appendix-2---snow-mass-from-smap-3-hourly-level-4">Appendix 2 - Snow Mass from SMAP, 3-hourly Level 4</h2>
 <section id="dataset-3" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-3">Dataset</h3>
+<h3 data-anchor-id="dataset-3">Dataset</h3>
 <p>The Soil Moisture Active Passive (SMAP) L4 Global 3-hourly 9 km EASE-Grid Surface and Root Zone Soil Moisture Geophysical Data (SPL4SMGP) provides a model-derived global 3-hr time average of snow mass in kg/m2. SMAP L-band brightness temperature data from descending and ascending half-orbit satellite passes (approximately 6:00 a.m. and 6:00 p.m. local solar time, respectively) are assimilated into a land surface model that is gridded using an Earth-fixed, global cylindrical 9 km Equal-Area Scalable Earth Grid, Version 2.0 (EASE-Grid 2.0) projection. Snow mass estimates are based on a snow model component of the NASA Catchment Land Surface Model.</p>
 <p>The dataset and algorithm are described in the <a href="https://nsidc.org/sites/default/files/documents/user-guide/multi_spl4smau-v007-userguide.pdf">data user guide</a> and the <a href="https://nsidc.org/sites/default/files/documents/technical-reference/reichle1438.pdf">Product Specific Document</a>.</p>
 <p>Please cite the dataset as: &gt; Reichle, R., G. De Lannoy, R. D. Koster, W. T. Crow, J. S. Kimball, Q. Liu, and M. Bechtold. (2022). SMAP L4 Global 3-hourly 9 km EASE-Grid Surface and Root Zone Soil Moisture Geophysical Data, Version 7. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. https://doi.org/10.5067/EVKPQZ4AFC4D.</p>
-<div class="cell" data-tags="[]" data-execution_count="35">
+<div id="1ad33c72-b484-4687-bc6c-0822804422de" class="cell" data-tags="[]" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SMAP SPL4SMGP</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>doi <span class="op">=</span> <span class="st">'10.5067/EVKPQZ4AFC4D'</span></span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4227,7 +4528,7 @@ Attributes: (50)</code></pre>
 Granules found: 2</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="36">
+<div id="ed96e00d-d1cf-40cd-bd9e-3e620929a05f" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># granules from Feb 15, 2023</span></span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>fh1 <span class="op">=</span> earthaccess.<span class="bu">open</span>(granules1)</span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="co"># open geophysical_data group</span></span>
@@ -4253,7 +4554,7 @@ Granules found: 2</code></pre>
 </script>
 </div>
 </div>
-<div class="cell" data-execution_count="37">
+<div id="b3137cff-879c-41dd-bb68-fdf107f00d0a" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># granules from March 02, 2023</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>fh2 <span class="op">=</span> earthaccess.<span class="bu">open</span>(granules2)</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="co"># open geophysical_data group</span></span>
@@ -4280,7 +4581,7 @@ Granules found: 2</code></pre>
 </div>
 </div>
 <p>The “snow_mass” variable is within the “Geophysical_Data” group. It provides the average snow mass (or snow water equivalent) over a land fraction of the grid cell, excluding areas of open water and permanent ice. Let’s print the attributes of the <code>snow_mass</code> variable.</p>
-<div class="cell" data-execution_count="38">
+<div id="0adc16f5-9aad-4b51-9d92-c547fbda64b5" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>ds1.variables[<span class="st">'snow_mass'</span>].attrs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{'DIMENSION_LABELS': [b'y', b'x'],
@@ -4293,7 +4594,7 @@ Granules found: 2</code></pre>
  'valid_min': 0.0}</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="39">
+<div id="f226c00a-ba07-4481-8f24-cac285a26ac1" class="cell" data-tags="[]" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the plot</span></span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> ccrs.Projection(<span class="st">"EPSG:6933"</span>) <span class="co"># EASEGRID 2</span></span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">4</span>), dpi<span class="op">=</span><span class="dv">130</span>, facecolor<span class="op">=</span><span class="st">"w"</span>, subplot_kw<span class="op">=</span><span class="bu">dict</span>(projection<span class="op">=</span>proj))</span>
@@ -4315,13 +4616,17 @@ Granules found: 2</code></pre>
 <span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="ss">f'Snow Mass </span><span class="sc">{</span>date2<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-40-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Earthdata_Subset_and_Plot_files/figure-html/cell-40-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="now-we-will-remove-the-saved-files-from-our-workspace-to-keep-it-clean-for-future-coding" class="level3">
-<h3 class="anchored" data-anchor-id="now-we-will-remove-the-saved-files-from-our-workspace-to-keep-it-clean-for-future-coding">Now we will remove the saved files from our workspace, to keep it clean for future coding!</h3>
-<div class="cell" data-execution_count="40">
+<h3 data-anchor-id="now-we-will-remove-the-saved-files-from-our-workspace-to-keep-it-clean-for-future-coding">Now we will remove the saved files from our workspace, to keep it clean for future coding!</h3>
+<div id="2a92fdcc-8868-4289-812d-3df354aba8ac" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> glob(<span class="st">"DSCOVR_EPIC_L2*.nc4"</span>):</span>
@@ -4333,13 +4638,13 @@ Granules found: 2</code></pre>
 </section>
 </section>
 <section id="additional-resources" class="level2">
-<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<h2 data-anchor-id="additional-resources">Additional Resources</h2>
 <section id="tutorials" class="level3">
-<h3 class="anchored" data-anchor-id="tutorials">Tutorials</h3>
+<h3 data-anchor-id="tutorials">Tutorials</h3>
 <p>This clinic was based off of several notebook tutorials including those presented during <a href="https://nasa-openscapes.github.io/earthdata-cloud-cookbook/tutorials/">past workshop events</a>, along with other materials co-created by the NASA Openscapes mentors: * <a href="https://nasa-openscapes.github.io/2021-Cloud-Hackathon/">2021 Earthdata Cloud Hackathon</a> * <a href="https://nasa-openscapes.github.io/2021-Cloud-Workshop-AGU/">2021 AGU Workshop</a> * <a href="https://github.com/nsidc/NSIDC-Data-Tutorials/tree/main/notebooks/ICESat-2_Cloud_Access">Accessing and working with ICESat-2 data in the cloud</a> * <a href="https://github.com/betolink/earthaccess-gallery/blob/main/notebooks/Sea_Level_Rise/SSL.ipynb">Analyzing Sea Level Rise Using Earth Data in the Cloud</a></p>
 </section>
 <section id="cloud-services" class="level3">
-<h3 class="anchored" data-anchor-id="cloud-services">Cloud services</h3>
+<h3 data-anchor-id="cloud-services">Cloud services</h3>
 <p>The examples used in the clinic provide an abbreviated and simplified workflow to explore access and subsetting options available through the Earthdata Cloud. There are several other options that can be used to interact with data in the Earthdata Cloud including:</p>
 <ul>
 <li><a href="https://opendap.earthdata.nasa.gov/">OPeNDAP</a>
@@ -4355,7 +4660,7 @@ Granules found: 2</code></pre>
 </ul>
 </section>
 <section id="support" class="level3">
-<h3 class="anchored" data-anchor-id="support">Support</h3>
+<h3 data-anchor-id="support">Support</h3>
 <ul>
 <li><a href="https://forum.earthdata.nasa.gov/">Earthdata Forum</a>
 <ul>
@@ -4373,7 +4678,7 @@ Granules found: 2</code></pre>
 </section>
 </section>
 
-</main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -4415,6 +4720,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -4483,13 +4815,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -4568,10 +4902,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/nasa-openscapes\.github\.io\/2023-Cloud-Workshop-AGU\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -4581,8 +4932,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -4594,7 +4954,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -4638,6 +5121,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -4663,6 +5147,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -4724,25 +5234,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html" class="pagination-link">
+      <a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html" class="pagination-link" aria-label="Search &amp; Discovery">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Search &amp; Discovery</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
   </div>
 </nav>
-</div> <!-- /content -->
+ <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Openscapes (2023). 2023 NASA Openscapes AGU Workshop</div>
+    <div class="nav-footer-center">
+<p>Openscapes (2023). 2023 NASA Openscapes AGU Workshop</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/NASA-Openscapes/2023-Cloud-Workshop-AGU/blob/main/tutorials/Earthdata_Subset_and_Plot.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/NASA-Openscapes/2023-Cloud-Workshop-AGU/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
