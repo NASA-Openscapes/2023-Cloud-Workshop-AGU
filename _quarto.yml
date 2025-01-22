@@ -30,8 +30,8 @@ website:
           href: prerequisites.md 
         - text: "Schedule"
           href: schedule.md
-        - text: "Slides"
-          href: slides.md
+        # - text: "Slides"
+        #   href: slides.md
         - section: "Tutorials"
           contents: 
             - text: "Search & Discovery"
