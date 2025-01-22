@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2023 NASA Openscapes AGU Workshop - Data discovery with earthaccess</title>
+<title>Data discovery with earthaccess – 2023 NASA Openscapes AGU Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -65,18 +65,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../tutorials/Earthdata_Subset_and_Plot.html" rel="next">
-<link href="../slides.html" rel="prev">
+<link href="../schedule.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-835b13099253c955725b0fde6d789152.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f5d3f56c1a536c76e7480bf07e2c351a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,13 +125,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-menu" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Menu</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-menu">    
@@ -146,10 +146,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../schedule.html">
  <span class="dropdown-text">Schedule</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../slides.html">
- <span class="dropdown-text">Slides</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Tutorials</li>
@@ -170,18 +166,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/Earthdata_Search_Discovery_earthaccess.html">Search &amp; Discovery</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -215,17 +211,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Slides</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Tutorials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -338,7 +328,7 @@ Using .netrc file for EDL</code></pre>
 <section id="search-for-data" class="level3">
 <h3 class="anchored" data-anchor-id="search-for-data">Search for data</h3>
 <p>There are multiple keywords we can use to discovery data from collections. The table below contains the <code>short_name</code>, <code>concept_id</code>, and <code>doi</code> for some collections we are interested in for other exercises. Each of these can be used to search for data or information related to the collection we are interested in.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Shortname</th>
@@ -621,7 +611,6 @@ Using .netrc file for EDL</code></pre>
 <div id="3b87bdda-7dc8-458a-ab99-50aca9ed41c9" class="cell" data-tags="[]" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
-<div>
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -1083,14 +1072,14 @@ Attributes:
        '2023-04-02T00:00:00.000000000', '2023-04-03T00:00:00.000000000',
        '2023-04-04T00:00:00.000000000', '2023-04-05T00:00:00.000000000',
        '2023-04-06T00:00:00.000000000'], dtype='datetime64[ns]')</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-d3bd05da-e214-4c35-bd35-8b492668c828" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-d3bd05da-e214-4c35-bd35-8b492668c828" class="xr-section-summary">Data variables: <span>(10)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>precipitation</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-36de9aa2-713c-495f-aad7-211b87b90c5e" class="xr-var-attrs-in" type="checkbox"><label for="attrs-36de9aa2-713c-495f-aad7-211b87b90c5e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-6f6a5613-b377-42a6-959e-90a04e9a144a" class="xr-var-data-in" type="checkbox"><label for="data-6f6a5613-b377-42a6-959e-90a04e9a144a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>long_name :</span></dt><dd>Daily mean precipitation rate (combined microwave-IR) estimate. Formerly precipitationCal.</dd></dl></div><div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1125,54 +1114,15 @@ Attributes:
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>precipitation_cnt</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-int8
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-21ff456c-30ac-443e-b753-1ad5d7b13bc8" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-21ff456c-30ac-443e-b753-1ad5d7b13bc8" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-75e01c75-6b08-4575-9033-1bc235c6fc72" class="xr-var-data-in" type="checkbox">
-<label for="data-75e01c75-6b08-4575-9033-1bc235c6fc72" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-count
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Count of all valid half-hourly precipitation retrievals for the day
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>precipitation_cnt</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">int8</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-21ff456c-30ac-443e-b753-1ad5d7b13bc8" class="xr-var-attrs-in" type="checkbox"><label for="attrs-21ff456c-30ac-443e-b753-1ad5d7b13bc8" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-75e01c75-6b08-4575-9033-1bc235c6fc72" class="xr-var-data-in" type="checkbox"><label for="data-75e01c75-6b08-4575-9033-1bc235c6fc72" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>count</dd><dt><span>long_name :</span></dt><dd>Count of all valid half-hourly precipitation retrievals for the day</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1207,54 +1157,15 @@ Count of all valid half-hourly precipitation retrievals for the day
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>precipitation_cnt_cond</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-int8
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-094e067c-4552-43c1-a59c-9eae8d32ccff" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-094e067c-4552-43c1-a59c-9eae8d32ccff" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-8be8352f-b982-4988-944a-0b115a78a29d" class="xr-var-data-in" type="checkbox">
-<label for="data-8be8352f-b982-4988-944a-0b115a78a29d" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-count
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Count of half-hourly precipitation retrievals for the day where precipitation is at least 0.01 mm/hr
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>precipitation_cnt_cond</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">int8</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-094e067c-4552-43c1-a59c-9eae8d32ccff" class="xr-var-attrs-in" type="checkbox"><label for="attrs-094e067c-4552-43c1-a59c-9eae8d32ccff" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-8be8352f-b982-4988-944a-0b115a78a29d" class="xr-var-data-in" type="checkbox"><label for="data-8be8352f-b982-4988-944a-0b115a78a29d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>count</dd><dt><span>long_name :</span></dt><dd>Count of half-hourly precipitation retrievals for the day where precipitation is at least 0.01 mm/hr</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1289,54 +1200,15 @@ Count of half-hourly precipitation retrievals for the day where precipitation is
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>MWprecipitation</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-float32
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-c35a9a1e-eb8c-4fbd-aef0-2252af168204" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-c35a9a1e-eb8c-4fbd-aef0-2252af168204" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-a7e914be-9165-4e7d-8cb1-c57673d7f2c1" class="xr-var-data-in" type="checkbox">
-<label for="data-a7e914be-9165-4e7d-8cb1-c57673d7f2c1" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-mm/day
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Daily mean High Quality precipitation rate from all available microwave sources. Formerly HQprecipitation.
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>MWprecipitation</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-c35a9a1e-eb8c-4fbd-aef0-2252af168204" class="xr-var-attrs-in" type="checkbox"><label for="attrs-c35a9a1e-eb8c-4fbd-aef0-2252af168204" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-a7e914be-9165-4e7d-8cb1-c57673d7f2c1" class="xr-var-data-in" type="checkbox"><label for="data-a7e914be-9165-4e7d-8cb1-c57673d7f2c1" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>long_name :</span></dt><dd>Daily mean High Quality precipitation rate from all available microwave sources. Formerly HQprecipitation.</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1371,54 +1243,15 @@ Daily mean High Quality precipitation rate from all available microwave sources.
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>MWprecipitation_cnt</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-int8
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-29817ac5-589f-4726-9921-c14b81d80abc" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-29817ac5-589f-4726-9921-c14b81d80abc" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-aa384d21-0d41-448f-b7ac-db33f047df81" class="xr-var-data-in" type="checkbox">
-<label for="data-aa384d21-0d41-448f-b7ac-db33f047df81" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-count
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Count of all valid half-hourly MWprecipitation retrievals for the day
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>MWprecipitation_cnt</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">int8</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-29817ac5-589f-4726-9921-c14b81d80abc" class="xr-var-attrs-in" type="checkbox"><label for="attrs-29817ac5-589f-4726-9921-c14b81d80abc" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-aa384d21-0d41-448f-b7ac-db33f047df81" class="xr-var-data-in" type="checkbox"><label for="data-aa384d21-0d41-448f-b7ac-db33f047df81" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>count</dd><dt><span>long_name :</span></dt><dd>Count of all valid half-hourly MWprecipitation retrievals for the day</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1453,54 +1286,15 @@ Count of all valid half-hourly MWprecipitation retrievals for the day
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>MWprecipitation_cnt_cond</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-int8
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-34ce2c7f-2e96-4b77-bc18-6426971a689f" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-34ce2c7f-2e96-4b77-bc18-6426971a689f" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-9844bcfe-418d-4613-96e5-f2f5313c6b0c" class="xr-var-data-in" type="checkbox">
-<label for="data-9844bcfe-418d-4613-96e5-f2f5313c6b0c" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-count
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Count of half-hourly MWprecipitation retrievals for the day where precipitation is at least 0.01 mm/hr
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>MWprecipitation_cnt_cond</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">int8</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-34ce2c7f-2e96-4b77-bc18-6426971a689f" class="xr-var-attrs-in" type="checkbox"><label for="attrs-34ce2c7f-2e96-4b77-bc18-6426971a689f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-9844bcfe-418d-4613-96e5-f2f5313c6b0c" class="xr-var-data-in" type="checkbox"><label for="data-9844bcfe-418d-4613-96e5-f2f5313c6b0c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>count</dd><dt><span>long_name :</span></dt><dd>Count of half-hourly MWprecipitation retrievals for the day where precipitation is at least 0.01 mm/hr</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1535,54 +1329,15 @@ Count of half-hourly MWprecipitation retrievals for the day where precipitation 
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>randomError</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-float32
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-cbc66be4-6d1d-4e21-bb99-41284c271fee" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-cbc66be4-6d1d-4e21-bb99-41284c271fee" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-aa13dab4-fbf5-4132-9207-d48fea04032a" class="xr-var-data-in" type="checkbox">
-<label for="data-aa13dab4-fbf5-4132-9207-d48fea04032a" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-mm/day
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Root-mean-square error estimate for combined microwave-IR daily precipitation rate
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>randomError</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-cbc66be4-6d1d-4e21-bb99-41284c271fee" class="xr-var-attrs-in" type="checkbox"><label for="attrs-cbc66be4-6d1d-4e21-bb99-41284c271fee" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-aa13dab4-fbf5-4132-9207-d48fea04032a" class="xr-var-data-in" type="checkbox"><label for="data-aa13dab4-fbf5-4132-9207-d48fea04032a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>long_name :</span></dt><dd>Root-mean-square error estimate for combined microwave-IR daily precipitation rate</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1617,54 +1372,15 @@ Root-mean-square error estimate for combined microwave-IR daily precipitation ra
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>randomError_cnt</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-int8
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-b8c2f272-36e6-49b1-aee0-5784f2e8d185" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-b8c2f272-36e6-49b1-aee0-5784f2e8d185" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-6f05a04c-1046-4463-b73c-912b21866de4" class="xr-var-data-in" type="checkbox">
-<label for="data-6f05a04c-1046-4463-b73c-912b21866de4" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-count
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Count of valid half-hourly randomError retrievals for the day
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>randomError_cnt</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">int8</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-b8c2f272-36e6-49b1-aee0-5784f2e8d185" class="xr-var-attrs-in" type="checkbox"><label for="attrs-b8c2f272-36e6-49b1-aee0-5784f2e8d185" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-6f05a04c-1046-4463-b73c-912b21866de4" class="xr-var-data-in" type="checkbox"><label for="data-6f05a04c-1046-4463-b73c-912b21866de4" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>count</dd><dt><span>long_name :</span></dt><dd>Count of valid half-hourly randomError retrievals for the day</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1699,58 +1415,15 @@ Count of valid half-hourly randomError retrievals for the day
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>probabilityLiquidPrecipitation</span>
-</div>
-<div class="xr-var-dims">
-(time, lon, lat)
-</div>
-<div class="xr-var-dtype">
-int8
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;
-</div>
-<input id="attrs-9b3bf493-3858-4158-b882-3e8639cbfa86" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-9b3bf493-3858-4158-b882-3e8639cbfa86" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-d93af166-25a9-4d6c-9fde-298f71a1e17e" class="xr-var-data-in" type="checkbox">
-<label for="data-d93af166-25a9-4d6c-9fde-298f71a1e17e" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>units :</span></dt>
-<dd>
-percent
-</dd>
-<dt><span>long_name :</span></dt>
-<dd>
-Probability of liquid precipitation
-</dd>
-<dt><span>description :</span></dt>
-<dd>
-Probability of liquid precipitation estimated with a diagnostic parameterization using ancillary data. 0=missing values; 1=likely solid; 100=likely liquid or no precipitation. Screen by positive precipitation or precipitation_cnt_cond to locate meaningful probabilities.
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>probabilityLiquidPrecipitation</span></div><div class="xr-var-dims">(time, lon, lat)</div><div class="xr-var-dtype">int8</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 3600, 1800), meta=np.ndarray&gt;</div><input id="attrs-9b3bf493-3858-4158-b882-3e8639cbfa86" class="xr-var-attrs-in" type="checkbox"><label for="attrs-9b3bf493-3858-4158-b882-3e8639cbfa86" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d93af166-25a9-4d6c-9fde-298f71a1e17e" class="xr-var-data-in" type="checkbox"><label for="data-d93af166-25a9-4d6c-9fde-298f71a1e17e" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>units :</span></dt><dd>percent</dd><dt><span>long_name :</span></dt><dd>Probability of liquid precipitation</dd><dt><span>description :</span></dt><dd>Probability of liquid precipitation estimated with a diagnostic parameterization using ancillary data. 0=missing values; 1=likely solid; 100=likely liquid or no precipitation.  Screen by positive precipitation or precipitation_cnt_cond to locate meaningful probabilities.</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1785,50 +1458,15 @@ Probability of liquid precipitation estimated with a diagnostic parameterization
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li class="xr-var-item">
-<div class="xr-var-name">
-<span>time_bnds</span>
-</div>
-<div class="xr-var-dims">
-(time, nv)
-</div>
-<div class="xr-var-dtype">
-datetime64[ns]
-</div>
-<div class="xr-var-preview xr-preview">
-dask.array&lt;chunksize=(1, 2), meta=np.ndarray&gt;
-</div>
-<input id="attrs-a6208726-405d-4222-91ff-f07787a08188" class="xr-var-attrs-in" type="checkbox">
-<label for="attrs-a6208726-405d-4222-91ff-f07787a08188" title="Show/Hide attributes">
-<svg class="icon xr-icon-file-text2">
-<use href="#icon-file-text2"></use>
-</svg>
-</label>
-<input id="data-28170d10-dd3c-4f75-801e-71438b10b8f9" class="xr-var-data-in" type="checkbox">
-<label for="data-28170d10-dd3c-4f75-801e-71438b10b8f9" title="Show/Hide data repr">
-<svg class="icon xr-icon-database">
-<use href="#icon-database"></use>
-</svg>
-</label>
-<div class="xr-var-attrs">
-<dl>
-<dt><span>coordinates :</span></dt>
-<dd>
-time nv
-</dd>
-</dl>
-</div>
-<div class="xr-var-data">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+</div></li><li class="xr-var-item"><div class="xr-var-name"><span>time_bnds</span></div><div class="xr-var-dims">(time, nv)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(1, 2), meta=np.ndarray&gt;</div><input id="attrs-a6208726-405d-4222-91ff-f07787a08188" class="xr-var-attrs-in" type="checkbox"><label for="attrs-a6208726-405d-4222-91ff-f07787a08188" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-28170d10-dd3c-4f75-801e-71438b10b8f9" class="xr-var-data-in" type="checkbox"><label for="data-28170d10-dd3c-4f75-801e-71438b10b8f9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>coordinates :</span></dt><dd>time nv</dd></dl></div><div class="xr-var-data">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<td><table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th></th>
@@ -1863,8 +1501,7 @@ time nv
 </tr>
 </tbody>
 </table>
-</div>
-</li></ul></div></li></ul></div><li class="xr-section-item"><input id="section-700416a1-f779-48d0-b738-0f8658e1a4fe" class="xr-section-summary-in" type="checkbox"><label for="section-700416a1-f779-48d0-b738-0f8658e1a4fe" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-9fa0ea93-b4cd-4bd8-ac9c-a6697ae2d594" class="xr-index-data-in" type="checkbox"><label for="index-9fa0ea93-b4cd-4bd8-ac9c-a6697ae2d594" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([ -179.9499969482422, -179.85000610351562,             -179.75,
+</div></li></ul></div></li><li class="xr-section-item"><input id="section-700416a1-f779-48d0-b738-0f8658e1a4fe" class="xr-section-summary-in" type="checkbox"><label for="section-700416a1-f779-48d0-b738-0f8658e1a4fe" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>lon</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-9fa0ea93-b4cd-4bd8-ac9c-a6697ae2d594" class="xr-index-data-in" type="checkbox"><label for="index-9fa0ea93-b4cd-4bd8-ac9c-a6697ae2d594" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([ -179.9499969482422, -179.85000610351562,             -179.75,
               -179.64999389648438,  -179.5500030517578,  -179.4499969482422,
               -179.35000610351562,             -179.25, -179.14999389648438,
                -179.0500030517578,
@@ -1890,16 +1527,15 @@ time nv
                '2023-04-01', '2023-04-02', '2023-04-03', '2023-04-04',
                '2023-04-05', '2023-04-06'],
               dtype='datetime64[ns]', name='time', length=139, freq=None))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-c1fcd2f8-8688-4af4-81f4-5d0ef5113780" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-c1fcd2f8-8688-4af4-81f4-5d0ef5113780" class="xr-section-summary">Attributes: <span>(9)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>BeginDate :</span></dt><dd>2022-11-19</dd><dt><span>BeginTime :</span></dt><dd>00:00:00.000Z</dd><dt><span>EndDate :</span></dt><dd>2022-11-19</dd><dt><span>EndTime :</span></dt><dd>23:59:59.999Z</dd><dt><span>FileHeader :</span></dt><dd>StartGranuleDateTime=2022-11-19T00:00:00.000Z;
-StopGranuleDateTime=2022-11-19T23:59:59.999Z</dd><dt><span>InputPointer :</span></dt><dd>3B-HHR.MS.MRG.3IMERG.20221119-S000000-E002959.0000.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S003000-E005959.0030.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S010000-E012959.0060.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S013000-E015959.0090.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S020000-E022959.0120.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S023000-E025959.0150.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S030000-E032959.0180.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S033000-E035959.0210.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S040000-E042959.0240.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S043000-E045959.0270.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S050000-E052959.0300.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S053000-E055959.0330.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S060000-E062959.0360.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S063000-E065959.0390.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S070000-E072959.0420.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S073000-E075959.0450.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S080000-E082959.0480.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S083000-E085959.0510.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S090000-E092959.0540.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S093000-E095959.0570.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S100000-E102959.0600.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S103000-E105959.0630.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S110000-E112959.0660.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S113000-E115959.0690.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S120000-E122959.0720.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S123000-E125959.0750.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S130000-E132959.0780.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S133000-E135959.0810.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S140000-E142959.0840.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S143000-E145959.0870.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S150000-E152959.0900.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S153000-E155959.0930.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S160000-E162959.0960.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S163000-E165959.0990.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S170000-E172959.1020.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S173000-E175959.1050.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S180000-E182959.1080.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S183000-E185959.1110.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S190000-E192959.1140.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S193000-E195959.1170.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S200000-E202959.1200.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S203000-E205959.1230.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S210000-E212959.1260.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S213000-E215959.1290.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S220000-E222959.1320.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S223000-E225959.1350.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S230000-E232959.1380.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S233000-E235959.1410.V07A.HDF5</dd><dt><span>title :</span></dt><dd>GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree (GPM_3IMERGDF)</dd><dt><span>DOI :</span></dt><dd>10.5067/GPM/IMERGDF/DAY/07</dd><dt><span>ProductionTime :</span></dt><dd>2023-08-25T14:03:25.792Z</dd></dl></div></li></div></div>
+StopGranuleDateTime=2022-11-19T23:59:59.999Z</dd><dt><span>InputPointer :</span></dt><dd>3B-HHR.MS.MRG.3IMERG.20221119-S000000-E002959.0000.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S003000-E005959.0030.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S010000-E012959.0060.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S013000-E015959.0090.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S020000-E022959.0120.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S023000-E025959.0150.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S030000-E032959.0180.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S033000-E035959.0210.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S040000-E042959.0240.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S043000-E045959.0270.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S050000-E052959.0300.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S053000-E055959.0330.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S060000-E062959.0360.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S063000-E065959.0390.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S070000-E072959.0420.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S073000-E075959.0450.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S080000-E082959.0480.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S083000-E085959.0510.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S090000-E092959.0540.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S093000-E095959.0570.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S100000-E102959.0600.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S103000-E105959.0630.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S110000-E112959.0660.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S113000-E115959.0690.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S120000-E122959.0720.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S123000-E125959.0750.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S130000-E132959.0780.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S133000-E135959.0810.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S140000-E142959.0840.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S143000-E145959.0870.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S150000-E152959.0900.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S153000-E155959.0930.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S160000-E162959.0960.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S163000-E165959.0990.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S170000-E172959.1020.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S173000-E175959.1050.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S180000-E182959.1080.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S183000-E185959.1110.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S190000-E192959.1140.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S193000-E195959.1170.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S200000-E202959.1200.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S203000-E205959.1230.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S210000-E212959.1260.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S213000-E215959.1290.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S220000-E222959.1320.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S223000-E225959.1350.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S230000-E232959.1380.V07A.HDF5;3B-HHR.MS.MRG.3IMERG.20221119-S233000-E235959.1410.V07A.HDF5</dd><dt><span>title :</span></dt><dd>GPM IMERG Final Precipitation L3 1 day 0.1 degree x 0.1 degree (GPM_3IMERGDF)</dd><dt><span>DOI :</span></dt><dd>10.5067/GPM/IMERGDF/DAY/07</dd><dt><span>ProductionTime :</span></dt><dd>2023-08-25T14:03:25.792Z</dd></dl></div></li></ul></div></div>
 </div>
 </div>
-</section></section></section></main></div>
 <hr>
-
-
-
+</section>
+</section>
+</section>
 <section id="resources" class="level2">
-<h2 data-anchor-id="resources">Resources</h2>
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
 <li>NASA’s <a href="https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html">Common Metadata Repository (CMR) API</a><br>
 </li>
@@ -1911,7 +1547,7 @@ StopGranuleDateTime=2022-11-19T23:59:59.999Z</dd><dt><span>InputPointer :</span>
 
 </section>
 
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -2091,18 +1727,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2134,7 +1759,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/nasa-openscapes\.github\.io\/2023-Cloud-Workshop-AGU\/");
@@ -2142,7 +1787,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2239,7 +1884,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2467,8 +2111,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../slides.html" class="pagination-link" aria-label="Slides">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Slides</span>
+      <a href="../schedule.html" class="pagination-link" aria-label="Schedule">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Schedule</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -2477,7 +2121,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav>
- <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
